@@ -1,0 +1,16 @@
+ <form action="/consulta/crear" method="POST">
+
+{{#if success}}
+
+<div class= >
+<div class="alert   d-flex p-2" role="alert">
+   {{success}}
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+    </button>
+    <td><a href="/consulta/borrar/{{this.cedula}}"  class="btn btn-danger"> {{this.cedula}}</a></td>
+   <a href="/consulta/" type="button">no</a>
+</div>
+
+{{/if}}
+</form>

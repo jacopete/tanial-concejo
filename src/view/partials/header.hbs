@@ -1,0 +1,150 @@
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+{{#if user.usuario}}
+<!--superusuario-->
+{{#ifusuario user.tipo "superusuario"}}
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
+ <div class="d-flex justify-content-between">
+   <div class="container">
+      <a class="navbar-brand" href="">Plataforma</a>
+     <a class="navbar-brand" href="">Bienvenido {{user.usuario}}</a>
+ 
+    </div>
+       <div class=" justify-content-end col-md-4 botonesheader" >
+        <ul class="navbar-nav d-flex ">
+          <li class="nav-item ">
+            <a class="nav-link inscritostocar" href="/consulta">Inscritos  <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/personal">Personal</a>
+          </li>
+            <li class="nav-item ">
+            <a class="nav-link  " href="/contratos">Vínculo laboral</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="/divipol">Divipol</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/graficas">Grafica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/salir">Salir</a>
+          </li>
+       
+        </ul>
+      </div>
+
+
+
+ </div>
+</nav>
+<script>
+$('.inscritostocar').click(function() {
+  console.log("inscritostocar");
+  $('.inscritosver').css("display", "block");
+  /*
+var value = $("#tipo option:selected").val();
+//To display the selected value we used <p id="result"> tag in HTML file
+  if(value=="GESTOR"){
+    console.log("GESTOR")
+ 
+     $('.opcion').css("display", "none");
+  }else{
+
+     $('.opcion').css("display", "block");
+  }*/
+
+});
+
+
+
+</script>
+{{/ifusuario}}
+<!--usuario-->
+{{#ifusuario user.tipo "usuario"}}
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+ <div class="container d-flex justify-content-between">
+   <div class="container">
+      <a class="navbar-brand" href="">Plataforma</a>
+      <a class="navbar-brand" href="">Bienvenido {{user.usuario}}</a>
+   </div>
+    
+
+   
+      <div class=" justify-content-end" >
+        <ul class="navbar-nav d-flex ">
+          <li class="nav-item">
+            <a class="nav-link" href="/consultavista">Inscritos  <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/personalvista">Personal</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="/divipol">Divipol</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="/graficas">Grafica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/salir">Salir</a>
+          </li>
+       
+        </ul>
+      </div>
+
+
+ </div>
+</nav>
+
+
+
+
+
+
+
+
+{{/ifusuario}}
+
+<!--usuariomedio-->
+{{#ifusuario user.tipo "usuariomedio"}}
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-between">
+ <div class="d-flex justify-content-between">
+   <div class="container">
+      <a class="navbar-brand" href="">Plataforma</a>
+     <a class="navbar-brand" href="">Bienvenido {{user.usuario}}</a>
+ 
+    </div>
+       <div class=" justify-content-end col-md-4 botonesheader" >
+        <ul class="navbar-nav d-flex ">
+          <li class="nav-item ">
+            <a class="nav-link inscritostocar" href="/consultamedio">Inscritos  <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/personalmedio">Personal</a>
+          </li>
+            <li class="nav-item ">
+            <a class="nav-link  " href="/contratosmedio">Vínculo laboral</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/divipol">Divipol</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="/graficas">Grafica</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/salir">Salir</a>
+          </li>
+       
+        </ul>
+      </div>
+
+
+
+ </div>
+</nav>
+
+{{/ifusuario}}
+{{/if}}

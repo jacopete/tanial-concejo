@@ -1,0 +1,94 @@
+<div class="titulo">
+<h1>Inscritos </h1>
+</div>
+ {{> consultasvotantes}}
+
+<form action="/consulta/lista" method="POST">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">cedula</th>
+        <th scope="col">Nombre completo</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Correo</th>
+        </th>
+        <th>
+          <label for="comuna">Comuna</label>
+          <select class="form-control" id="comuna" name="comuna" onchange="this.form.submit()">
+            <option selected value="0">Seleciona</option>
+            <option {{selected comuna "1"}}>1</option>
+            <option {{selected comuna "2"}}>2</option>
+            <option {{selected comuna "3"}}>3</option>
+            <option {{selected comuna "4"}}>4</option>
+            <option {{selected comuna "5"}}>5</option>
+          </select>  
+      </th> 
+      <th>       
+          <label for="zona">Zona</label>
+          <select class="form-control" id="zona" name="zona" onchange="this.form.submit()">
+            <option selected value="0">Seleciona</option>
+            <option {{selected zona "1"}}>1</option>
+            <option {{selected zona "2"}}>2</option>
+            <option {{selected zona "3"}}>3</option>
+            <option {{selected zona "4"}}>4</option>
+            <option {{selected zona "5"}}>5</option>
+          </select>
+      </th>
+      <th scope="col">Nombre del puesto</th>
+      <th>
+          <label for="zona">Nº puesto</label>
+          <select class="form-control" id="puesto" name="puesto" onchange="this.form.submit()">
+            <option selected value="0">Seleciona</option>
+            <option {{selected puesto "1"}}>1</option>
+            <option {{selected puesto "2"}}>2</option>
+            <option {{selected puesto "3"}}>3</option>
+            <option {{selected puesto "4"}}>4</option>
+            <option {{selected puesto "5"}}>5</option>
+          </select>
+       </th>
+      <th>
+          <label for="mesa">mesa</label>
+           <select class="form-control" id="mesa" name="mesa" onchange="this.form.submit()">
+            <option selected value="0">Seleciona</option>
+            <option {{selected mesa "1"}}>1</option>
+            <option {{selected mesa "2"}}>2</option>
+            <option {{selected mesa "3"}}>3</option>
+            <option {{selected mesa "4"}}>4</option>
+            <option {{selected mesa "5"}}>5</option>
+          </select>      
+      </th> 
+        <th scope="col">edictar</th>
+        <th scope="col">borrar</th>
+      </tr>
+    
+    </thead>
+    </form>
+
+  
+    <tbody>
+        {{#each usuario}}
+      <tr>
+        <th scope="row">1</th>
+        <td>{{this.cedula}}</td>
+        <td>{{this.nombre_completo}}</td>
+        <td>{{this.direccion}}</td>
+        <td>{{this.telefono}}</td>
+        <td>{{this.correo}}</td>
+        <td>{{this.comuna}}</td>
+        <td>{{this.zona}}</td>
+        <td>{{this.nombre_del_puesto}}</td>
+        <td>{{this.puesto}}</td>
+        <td>{{this.mesa}}</td>
+      <td><a href="/consulta/edictar/{{this.cedula}}"  class="btn btn-warning">edictar</a></td>
+        <td><a href="/consulta/borrar/opcion/{{this.cedula}}"  class="btn btn-danger">borrar</a></td>
+      
+      
+      </tr>
+    
+      {{/each}}
+    </tbody>
+  </table>
+
+

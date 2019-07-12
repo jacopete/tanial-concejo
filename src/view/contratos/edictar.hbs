@@ -1,0 +1,167 @@
+  <div class="titulo">
+<h1>  Vínculo laboral </h1>
+</div>
+     <div class="container-fluid ">
+   {{#each usuario}}
+  <form action="/contratos/edictar/{{this.cedula}}" method="POST">
+                    <div class="form-group">
+<table class="table">
+  <thead>
+    <tr>
+      
+        <th  class="text-center texto" >Cedula</th>
+        <th class="text-center">Nombre completo</th>
+        <th class="text-center">Teléfono</th>
+        <th class="text-center">Celular</th>
+        <th class="text-center">Dirección</th>
+        <th class="text-center">Correo</th>
+        <th class="text-center">Vinculo</th>
+        <th class="text-center">Tipo contrato</th>
+        <th class="text-center">Salario</th>
+       
+        
+      
+      </th>
+      
+   
+
+
+    </tr>
+  </thead>
+ 
+  
+
+  <tbody>
+   
+      
+    <tr>
+    
+      <td><input class="col-md-12" type="number" name="cedula"  value="{{this.cedula}}"> </td>
+      <td><input class="col-md-12" type="text" name="nombre_completo" value="{{this.nombre_completo }}"></td>
+      <td><input class="col-md-12" name="direccion" value="{{this.direccion}}"></td>
+      <td><input class="col-md-12" type="text" name="telefono"  value="{{this.telefono}}"></td>
+      <td><input class="col-md-12" type="text" name="celular"  value="{{this.celular}}"></td>
+      <td><input class="col-md-12" type="text" name="correo"  value="{{this.correo}}"></td>
+     
+       <td>
+        <select class="form-control" id="tipo" name="tipo_vinculo"   id="exampleFormControlSelect1">
+        <option value="{{this.tipo_vinculo}}">{{this.tipo_vinculo}}</option>
+        <option>PLANTA</option>
+        <option>CONTRATISTA</option>
+        </select>
+
+        </td>
+        <td>
+        <select class="form-control" id="tipo" name="tipo_contrato"   id="exampleFormControlSelect1">
+        <option value="{{this.tipo_contrato}}">{{this.tipo_contrato}}</option>
+        <option>CAD</option>
+        <option>LNR</option>
+        <option>NP</option>
+        <option>CTF</option>
+        <option>PS</option>
+        </select>
+        </td>
+      <td><input class="col-md-12" type="text" name="salario"  value="{{this.salario}}"></td>
+      
+    </tr>
+
+    
+  </tbody>
+ </table>
+<table class="table">
+  <thead>
+    <tr>
+      
+        <th class="text-center">Fecha inicial</th>
+        <th class="text-center">Fecha final</th>
+        <th class="text-center">Cargo</th>
+        <th class="text-center">Dependencia</th>
+        <th class="text-center">Entidad</th>
+        
+       
+        
+      
+      </th>
+      
+   
+
+
+    </tr>
+  </thead>
+ 
+  
+
+  <tbody>
+   
+      
+    <tr>
+    
+     
+      <td><input class="col-md-12" type="text" name="fechai"  value="{{this.fechai}}"></td>
+      <td><input class="col-md-12" type="text" name="fechat"  value="{{this.fechat}}"></td>
+      <td><input class="col-md-12" type="text" name="cargo"  value="{{this.cargo}}"></td>
+         <td>
+        <select class="form-control" id="tipo" name="dependencia"   id="exampleFormControlSelect1" >
+        <option value="{{this.dependencia}}">Seleccionar</option>
+        <option>BACTERIOLOGA/ SECRETARIA SALUD</option>
+        <option>BANCO AGRARIO</option>
+        <option>CENTRO DE GESTIÓN TECNOLOGICA Y SERVICIOS</option>
+        <option>CONCEJO MUNICIPAL</option>
+        <option>CVC</option>
+        <option>DAGMA</option>
+        <option>DESARROLLO ECONOMICO Y COMPETITIVIDAD</option>
+        <option>FOMENTO INDERVALLE/ MONITORA</option>
+        <option</option>
+        <option>HOME CARE</option>
+        <option>INDERVALLE</option>
+        <option>SECREARIA DE LAS TICS</option>
+        <option>SECRETARIA DE BIENESTAR SOCIAL</option>
+        <option>SECRETARIA DE CULTURA</option>
+        <option>SECRETARIA DE DEPORTES</option>
+        <option>SECRETARIA DE DESARROLLO ECONOMICO Y COMPETITIVIDAD</option>
+        <option>SECRETARIA DE EDUCACIÓN</option>
+        <option>SECRETARIA DE INFRAESTRUCTURA</option>
+        <option>SECRETARIA DE SALUD</option>
+        <option>SECRETARIA DE SALUD-LABORATORIO DEPARTAMENTAL</option>
+        <option>SECRETARIA DE VIVIENDA</option>
+        <option>SECRETARIA DEPORTES</option>
+        <option>SECRETARIA GENERA</option>
+        <option>SECRETARIA GENERAL-CALIDAD</option>
+        <option>SECRETARIA GENERAL-DESPACHO</option>
+        <option>SECRETARIA GENERAL-GESTION DOCUMENTAL</option>
+        <option>SECRETARIA GENERAL-GESTION DOCUMENTAL-472</option>
+        <option>SECRETARIA SALUD-DESPACHO</option>
+        <option>TRANSPARENCIA</option>
+        <option>VALLECAUCANA DE AGUAS</option>
+       
+      
+        
+        </select>
+       </td>
+       <td>
+        <select class="form-control" id="tipo" name="entidad"   id="exampleFormControlSelect1">
+        <option value="{{this.entidad}}">Seleccionar</option>
+        <option>ALCALDIA</option>
+        <option>GOBERNACION</option>
+        <option>CONCEJO</option>
+        <option>ICBF</option>
+        </select>
+        </td>
+    
+    
+    </tr>
+
+    
+  </tbody>
+ </table>
+ <div class="d-flex justify-content-around">
+        <td><button class="btn btn-success col-md-2 " >Guardar</button></td>
+      <td><a href="javascript:history.back(-1);"  class="btn btn-danger col-md-2">Regresar</a></td>
+     
+      </div>
+ </div>
+
+</form>
+ {{/each}}
+</div>
+    

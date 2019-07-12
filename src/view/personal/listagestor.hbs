@@ -1,0 +1,171 @@
+<div class="titulo">
+<h1>  Personal </h1>
+</div>
+
+{{#if vista}}
+
+<div class="container-fluid ">
+
+{{#each verificausuario}}
+
+<h4>Lista del {{this.tipo}} : {{this.nombre_completo }}</h4>
+<h4>Cedula : {{this.cedula}}</h4>
+
+<div class="d-flex justify-content-around">
+
+<div scope="col"><h4>La persona reporto : {{this.reporte}}</h4></div>
+{{#if ../cedulagestor}}
+
+
+
+ <td><a href="/personal/lista1/{{../cedulagestor}}"  class="btn btn-info">Regresar</a></td>
+ {{/if}}
+{{/each}}
+</div>
+<br>
+<br>
+
+<form action="/personal/edictarpersona/" method="POST">
+  <table class="table text-center">
+    <thead >
+      
+      <tr class="text-center ">
+  
+        <th  class="text-center texto" >Cedula</th>
+        <th class="text-center">Nombre completo</th>
+        <th class="text-center">Dirección</th>
+        <th class="text-center">Teléfono</th>
+        <th class="text-center">Correo</th>
+        <th class="text-center">Comuna</th>
+        <th class="text-center">Zona</th>
+       
+       
+      
+      <th  class="text-center"  class="text-center" >Nombre del puesto</th>
+      <th><label for="zona">Nº puesto</label>   
+       </th>
+      <th  class="text-center">
+          <label for="mesa">Mesa</label>
+        
+           
+      </th> 
+        <th scope="col"></th>
+        <th scope="col"></th>
+    
+      </tr>
+    
+    </thead>
+  
+
+  
+   
+    <tbody>
+        {{#each usuario}}
+      <tr>
+     
+        <td>{{this.cedula}}</td>
+        <td>{{this.nombre_completo }}</td>
+        <td>{{this.direccion}}</td>
+        <td>{{this.telefono}}</td>
+        <td>{{this.correo}}</td>
+        <td>{{this.comuna}}</td>
+        <td>{{this.zona}}</td>
+        <td>{{this.nombre_del_puesto}}</td>
+        <td>{{this.puesto}}</td>
+        <td>{{this.mesa}}</td>
+        
+        <td><a href="/personal/edictarpersonagestor/{{this.cedula}}"  class="btn btn-warning glyphicon glyphicon-wrench"></a></td>
+        <td><a href="/personal/borrarpersonagestor/opcion/{{this.cedula}}"  class="btn btn-danger glyphicon glyphicon-trash"> </a></td>
+ 
+      
+      </tr>
+    
+      {{/each}}
+    </tbody>
+  </table> 
+
+<div class="d-flex justify-content-center">
+  {{#if navegacion}}
+  
+       {{#ifnavegacion navegacion}}
+     
+
+       {{/ifnavegacion}}
+ 
+   {{/if}}
+</div>
+    </form>
+<td><a href="/personal/descargalistalf"  class="btn btn-danger glyphicon glyphicon-download text-center">  Descargar </a></td>
+    </div>
+{{else}}
+
+<div class="container-fluid ">
+  {{#each verificausuario}}
+<h4>Lista del {{this.tipo}} : {{this.nombre_completo }} </h4>
+<h4>Cedula : {{this.cedula}}</h4>
+{{/each}}
+<div class="d-flex justify-content-around">
+
+<div scope="col"><h4>La persona reporto : {{this.reporte}}</h4></div>
+
+ <td><a href="/personal/lista1/{{cedulagestor}}"  class="btn btn-info">Regresar</a></td>
+
+</div>
+<br>
+<br>
+
+<form action="/personal" method="POST">
+  <table class="table">
+    <thead>
+      <tr>
+     
+        <th scope="col">cedula</th>
+        <th scope="col">Nombre completo</th>
+        <th scope="col">Tipo</th>
+       <th scope="col">Comuna</th>
+       <th scope="col"></th>
+        <th scope="col"></th>
+         <th scope="col"></th>
+      </tr>
+    
+    </thead>
+  
+
+  
+    <tbody>
+        {{#each usuario}}
+      <tr>
+       
+        <td>{{this.cedula}}</td>
+        <td>{{this.nombre_completo }}</td>
+        <td>{{this.tipo}}</td>
+        <td>{{this.comuna}}</td>
+
+      <td><a href="/personal/listagestor/{{this.cedula}}"  class="btn btn-info glyphicon glyphicon glyphicon-eye-open"></a></td>
+      <td><a href="/personal/edictargestores/{{this.cedula}}"  class="btn btn-warning glyphicon glyphicon-wrench"></a></td>
+      <td><a href="/personal/borrargestores/opcion/{{this.cedula}}"  class="btn btn-danger glyphicon glyphicon-trash"></a></td>
+      
+      
+      </tr>
+    
+      {{/each}}
+    </tbody>
+  </table> 
+<div class="d-flex justify-content-center">
+  {{#if navegacion}}
+   
+       {{#ifnavegacion navegacion}}
+     
+
+       {{/ifnavegacion}}
+ 
+   {{/if}}
+</div>
+    </form>
+<td><a href="/personal/descargalistalf"  class="btn btn-danger glyphicon glyphicon-download text-center">  Descargar </a></td>
+    </div>
+
+  {{/if}}
+
+
+  

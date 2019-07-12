@@ -1,0 +1,116 @@
+
+
+{{#if success2}}
+{{#each success2}}
+<div class="d-flex justify-content-center overflow">
+<div class="alert alert-success col-md-5  overflow" role="alert" >
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+    <h4 class="text-center">{{this}}</h4>
+    
+    
+
+   
+   
+ </div>
+ </div>
+ {{/each}}
+{{/if}}
+
+{{#if alert}}
+
+{{#each alert}}
+
+<div class="d-flex justify-content-center ">
+<div class="alert alert alert-info col-md-5 " role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+    <h4 class="text-center">{{this}}</h4>
+    
+    
+
+   
+   
+ </div> 
+</div>
+ {{/each}}
+
+
+
+  {{/if}}
+ 
+ {{#if warning}}
+{{#each warning}}
+
+<div class="d-flex justify-content-center">
+<div class="alert alert-danger col-md-5" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+    <h4 class="text-center">{{this}}</h4>
+    
+    
+
+   
+   
+ </div>
+ </div>
+
+ {{/each}}
+  {{/if}}
+<!--
+{{#if success}}
+{{#each success}}
+<div class="d-flex justify-content-center">
+<div class="alert alert-success col-md-5" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+    <h4 class="text-center">{{this}}</h4>
+    
+    
+
+   
+   
+ </div>
+ </div>
+  {{/each}}
+{{/if}}
+{{#if alert}}
+{{#each alert}}
+
+<div class="d-flex justify-content-center">
+<div class="alert alert alert-info col-md-5" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+    <h4 class="text-center">{{this}}</h4>
+    
+    
+
+   
+   
+ </div>
+ </div>
+
+ {{/each}}
+  {{/if}}
+
+  {{#if warning}}
+{{#each warning}}
+
+<div class="d-flex justify-content-center">
+<div class="alert alert-danger col-md-5" role="alert">
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+    <h4 class="text-center">{{this}}</h4>
+    
+    
+
+   
+   
+ </div>
+ </div>
+
+ {{/each}}
+  {{/if}}
+
+  
+-->

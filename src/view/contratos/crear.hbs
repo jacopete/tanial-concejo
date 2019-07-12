@@ -1,0 +1,168 @@
+  <div class="titulo">
+<h1>  Vínculo laboral </h1>
+</div>
+     <div class="container-fluid ">
+  
+  <form action="/contratos/crear" method="POST">
+                    <div class="form-group">
+<table class="table">
+  <thead>
+    <tr>
+      
+        <th  class="text-center texto" >Cedula</th>
+        <th class="text-center">Nombre completo</th>
+        <th class="text-center">Teléfono</th>
+        <th class="text-center">Celular</th>
+        <th class="text-center">Dirección</th>
+        <th class="text-center">Correo</th>
+        <th class="text-center">Vinculo</th>
+        <th class="text-center">Tipo contrato</th>
+        <th class="text-center">Salario</th>
+       
+        
+      
+      </th>
+      
+   
+
+
+    </tr>
+  </thead>
+ 
+  
+
+  <tbody>
+   
+      
+    <tr>
+    
+      <td><input class="col-md-12" type="number" name="cedula"  > </td>
+      <td><input class="col-md-12" type="text" name="nombre_completo"></td>
+      <td><input class="col-md-12" name="direccion"></td>
+      <td><input class="col-md-12" type="text" name="telefono"  ></td>
+      <td><input class="col-md-12" type="text" name="celular"  ></td>
+      <td><input class="col-md-12" type="text" name="correo" ></td>
+     
+       <td>
+        <select class="form-control" id="tipo" name="tipo_vinculo"   id="exampleFormControlSelect1">
+        <option value="">Seleccionar</option>
+        <option>PLANTA</option>
+        <option>CONTRATISTA</option>
+        </select>
+
+        </td>
+        <td>
+        <select class="form-control" id="tipo" name="tipo_contrato"   id="exampleFormControlSelect1">
+        <option value="">Seleccionar</option>
+        <option>CAD</option>
+        <option>LNR</option>
+        <option>NP</option>
+        <option>CTF</option>
+        <option>PS</option>
+        </select>
+        </td>
+      <td><input class="col-md-12" type="text" name="salario"  value=""></td>
+      
+    </tr>
+
+    
+  </tbody>
+ </table>
+<table class="table">
+  <thead>
+    <tr>
+      
+        <th class="text-center">Fecha inicial</th>
+        <th class="text-center">Fecha final</th>
+        <th class="text-center">Cargo</th>
+        <th class="text-center">Dependencia</th>
+        <th class="text-center">Entidad</th>
+    
+   
+        
+      
+      </th>
+      
+   
+
+
+    </tr>
+  </thead>
+ 
+  
+
+  <tbody>
+   
+      
+    <tr>
+    
+     
+      <td><input class="col-md-12" type="text" name="fechai"  placeholder="0000-00-00"></td>
+      <td><input class="col-md-12" type="text" name="fechat"   placeholder="0000-00-00"></td>
+      <td><input class="col-md-12" type="text" name="cargo"  ></td>
+        <th>
+        <select class="form-control" id="tipo" name="dependencia" id="exampleFormControlSelect1">
+        <option value="">Seleccionar</option>
+        <option {{selected dependencia "BACTERIOLOGA/ SECRETARIA SALUD"}}>BACTERIOLOGA/ SECRETARIA SALUD</option>
+        <option {{selected dependencia "BANCO AGRARIO"}}>BANCO AGRARIO</option>
+        <option {{selected dependencia "CENTRO DE GESTIÓN TECNOLOGICA Y SERVICIOS"}}>CENTRO DE GESTIÓN TECNOLOGICA Y SERVICIOS</option>
+        <option {{selected dependencia "CONCEJO MUNICIPAL"}}>CONCEJO MUNICIPAL</option>
+        <option {{selected dependencia "CVC"}}>CVC</option>
+        <option {{selected dependencia "DAGMA"}}>DAGMA</option>
+        <option {{selected dependencia "DESARROLLO ECONOMICO Y COMPETITIVIDAD"}}>DESARROLLO ECONOMICO Y COMPETITIVIDAD</option>
+        <option {{selected dependencia "FOMENTO INDERVALLE/ MONITORA"}}>FOMENTO INDERVALLE/ MONITORA</option>
+        <option {{selected dependencia "HACIENDA"}}>HACIENDA</option>
+        <option {{selected dependencia "HOME CARE"}}>HOME CARE</option>
+        <option {{selected dependencia "INDERVALLE"}}>INDERVALLE</option>
+        <option {{selected dependencia "SECREARIA DE LAS TICS"}}>SECREARIA DE LAS TICS</option>
+        <option {{selected dependencia "SECRETARIA DE BIENESTAR SOCIAL"}}>SECRETARIA DE BIENESTAR SOCIAL</option>
+        <option {{selected dependencia "SECRETARIA DE CULTURA"}}>SECRETARIA DE CULTURA</option>
+        <option {{selected dependencia "SECRETARIA DE DEPORTES"}}>SECRETARIA DE DEPORTES</option>
+        <option {{selected dependencia "SECRETARIA DE DESARROLLO ECONOMICO Y COMPETITIVIDAD"}}>SECRETARIA DE DESARROLLO ECONOMICO Y COMPETITIVIDAD</option>
+        <option {{selected dependencia "SECRETARIA DE EDUCACIÓN"}}>SECRETARIA DE EDUCACIÓN</option>
+        <option {{selected dependencia "SECRETARIA DE INFRAESTRUCTURA"}}>SECRETARIA DE INFRAESTRUCTURA</option>
+        <option {{selected dependencia "SECRETARIA DE SALUD"}}>SECRETARIA DE SALUD</option>
+        <option {{selected dependencia "SECRETARIA DE SALUD-LABORATORIO DEPARTAMENTAL"}}>SECRETARIA DE SALUD-LABORATORIO DEPARTAMENTAL</option>
+        <option {{selected dependencia "SECRETARIA DE VIVIENDA"}}>SECRETARIA DE VIVIENDA</option>
+        <option {{selected dependencia "SECRETARIA DEPORTES"}}>SECRETARIA DEPORTES</option>
+        <option {{selected dependencia "SECRETARIA GENERA"}}>SECRETARIA GENERA</option>
+        <option {{selected dependencia "SECRETARIA GENERAL-CALIDAD"}}>SECRETARIA GENERAL-CALIDAD</option>
+        <option {{selected dependencia "SECRETARIA GENERAL-DESPACHO"}}>SECRETARIA GENERAL-DESPACHO</option>
+        <option {{selected dependencia "SECRETARIA GENERAL-GESTION DOCUMENTAL"}}>SECRETARIA GENERAL-GESTION DOCUMENTAL</option>
+        <option {{selected dependencia "SECRETARIA GENERAL-GESTION DOCUMENTAL-472"}}>SECRETARIA GENERAL-GESTION DOCUMENTAL-472</option>
+        <option {{selected dependencia "SECRETARIA SALUD-DESPACHO"}}>SECRETARIA SALUD-DESPACHO</option>
+        <option {{selected dependencia "TRANSPARENCIA"}}>TRANSPARENCIA</option>
+        <option {{selected dependencia "VALLECAUCANA DE AGUAS"}}>VALLECAUCANA DE AGUAS</option>
+       
+      
+        
+        </select>
+        </th>
+     
+       <td>
+        <select class="form-control" id="tipo" name="entidad"   id="exampleFormControlSelect1">
+        <option value="">Seleccionar</option>
+        <option>ALCALDIA</option>
+        <option>GOBERNACION</option>
+        <option>CONCEJO</option>
+        <option>ICBF</option>
+        </select>
+        </td>
+     
+    
+    </tr>
+
+    
+  </tbody>
+ </table>
+ <div class="d-flex justify-content-around">
+        <td><button class="btn btn-success col-md-2 " >Guardar</button></td>
+      <td><a href="/contratos/"  class="btn btn-danger col-md-2">Regresar</a></td>
+     
+      </div>
+ </div>
+
+</form>
+
+</div>
+    

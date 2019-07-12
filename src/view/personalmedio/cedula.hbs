@@ -1,0 +1,180 @@
+ <div class="titulo">
+<h1>  Personal </h1>
+</div>
+
+
+
+
+
+<div class="container-fluid ">
+
+ {{> consultapersonasmedio}}
+ <div class="d-flex align-items-end flex-column bd-highlight mb-5">
+<td><a href="/personalmedio/"  class="btn btn-info" >Regresar</a></td>
+ </div>
+<form action="/personalmedio" method="POST">
+  <table class="table">
+    <thead>
+      <tr>
+     
+        <th scope="col">Cedula</th>
+        <th scope="col">Nombre completo</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Correo</th>
+        <th>
+           <label for="tipo">Tipo</label>
+          <select class="form-control" id="tipo" name="tipo" onchange="this.form.submit()">
+            <option selected value="">Seleciona</option>
+            <option {{selected tipo "GESTOR"}}>Gestor</option>
+            <option {{selected tipo "FUNCIONARIO"}}>Funcionario</option>
+            <option {{selected tipo "LIDER ESTRUCTURA"}}>Lider estructura</option>
+            <option {{selected tipo "LIDER INDEPENDIENTE"}}>Lider independiente</option>
+         
+       
+          </select>  
+      </th> 
+      <th>
+          <label for="comuna">Comuna</label>
+          <select class="form-control" id="comuna" name="comuna" onchange="this.form.submit()">
+            <option selected value="">Seleciona</option>
+            <option {{selected comuna "1"}}>1</option>
+            <option {{selected comuna "2"}}>2</option>
+            <option {{selected comuna "3"}}>3</option>
+            <option {{selected comuna "4"}}>4</option>
+            <option {{selected comuna "5"}}>5</option>
+            <option {{selected comuna "6"}}>6</option>
+            <option {{selected comuna "7"}}>7</option>
+            <option {{selected comuna "8"}}>8</option>
+            <option {{selected comuna "9"}}>9</option>
+            <option {{selected comuna "10"}}>10</option>
+            <option {{selected comuna "11"}}>11</option>
+            <option {{selected comuna "12"}}>12</option>
+            <option {{selected comuna "13"}}>13</option>
+            <option {{selected comuna "14"}}>14</option>
+            <option {{selected comuna "15"}}>15</option>
+            <option {{selected comuna "16"}}>16</option>
+            <option {{selected comuna "17"}}>17</option>
+            <option {{selected comuna "18"}}>18</option>
+            <option {{selected comuna "19"}}>19</option>
+            <option {{selected comuna "20"}}>20</option>
+            <option {{selected comuna "21"}}>21</option>
+            <option {{selected comuna "22"}}>22</option>
+            <option {{selected comuna "23"}}>23</option>
+            <option {{selected comuna "24"}}>24</option>
+            <option {{selected comuna "25"}}>25</option>
+            <option {{selected comuna "26"}}>26</option>
+            <option {{selected comuna "27"}}>27</option>
+            <option {{selected comuna "28"}}>28</option>
+            <option {{selected comuna "29"}}>29</option>
+            <option {{selected comuna "30"}}>30</option>
+            <option {{selected comuna "31"}}>31</option>
+            <option {{selected comuna "32"}}>32</option>
+            <option {{selected comuna "33"}}>33</option>
+            <option {{selected comuna "34"}}>34</option>
+            <option {{selected comuna "35"}}>35</option>
+            <option {{selected comuna "36"}}>36</option>
+            <option {{selected comuna "37"}}>37</option>
+            <option {{selected comuna "38"}}>38</option>
+            <option {{selected comuna "39"}}>39</option>
+       
+          </select>  
+      </th> 
+    <th  class="text-center">       
+          <label for="zona" >Zona</label>
+           <select class="form-control" id="zona" name="zona" onchange="this.form.submit()">
+            <option selected value="">Seleciona</option>
+            <option {{selected zona "1"}}>1</option>
+            <option {{selected zona "2"}}>2</option>
+            <option {{selected zona "3"}}>3</option>
+            <option {{selected zona "4"}}>4</option>
+            <option {{selected zona "5"}}>5</option>
+            <option {{selected zona "6"}}>6</option>
+            <option {{selected zona "7"}}>7</option>
+            <option {{selected zona "8"}}>8</option>
+            <option {{selected zona "9"}}>9</option>
+            <option {{selected zona "10"}}>10</option>
+            <option {{selected zona "11"}}>11</option>
+            <option {{selected zona "12"}}>12</option>
+            <option {{selected zona "13"}}>13</option>
+            <option {{selected zona "14"}}>14</option>
+            <option {{selected zona "15"}}>15</option>
+          </select>
+      </th>
+     
+      <th>
+          <label for="zona">Nº puesto</label>
+          <select class="form-control" id="puesto" name="puesto" onchange="this.form.submit()">
+            <option selected value="">Seleciona</option>
+            <option {{selected puesto "1"}}>1</option>
+            <option {{selected puesto "2"}}>2</option>
+            <option {{selected puesto "3"}}>3</option>
+            <option {{selected puesto "4"}}>4</option>
+            <option {{selected puesto "5"}}>5</option>
+            <option {{selected puesto "6"}}>6</option>
+            <option {{selected puesto "7"}}>7</option>
+            <option {{selected puesto "8"}}>8</option>
+            <option {{selected puesto "9"}}>9</option>
+            <option {{selected puesto "10"}}>10</option>
+            <option {{selected puesto "11"}}>11</option>
+            <option {{selected puesto "12"}}>12</option>
+            <option {{selected puesto "13"}}>13</option>
+            <option {{selected puesto "14"}}>14</option>
+            <option {{selected puesto "15"}}>15</option>
+          </select>
+       </th>
+       <th  class="text-center">Nombre del puesto</th>
+         <th scope="col">Nº votos</th>
+        <th scope="col">Reporte</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+         <th scope="col"></th>
+            
+      </tr>
+    
+    </thead>
+  
+
+  
+    <tbody>
+        {{#each usuario}}
+      <tr>
+       
+        <td>{{this.cedula}}</td>
+        <td>{{this.nombre_completo }}</td>
+        <td>{{this.telefono}}</td>
+        <td>{{this.correo }}</td>
+        <td>{{this.tipo}}</td>
+        <td>{{this.comuna}}</td>
+        <td>{{this.zona}}</td>
+        <td>{{this.puesto}}</td>
+        <td>{{this.nombre_del_puesto}}</td>
+        <td>{{this.numero_votos}}</td>
+        <td>{{this.reporte}}</td>
+       
+    {{#ifgestor this.tipo}}
+         <td><a href="/personalmedio/lista1/{{../this.cedula}}"  class="btn btn-success glyphicon glyphicon glyphicon-eye-open"></a></td>
+         {{else}}
+            <th scope="col"></th>
+            
+         {{/ifgestor }}
+             <td><a href="/personalmedio/lista/{{this.cedula}}"  class="btn btn-info glyphicon glyphicon glyphicon-eye-open"></a></td>
+             
+      </tr>
+     
+    
+      {{/each}}
+    </tbody>
+  </table> 
+<div class="d-flex justify-content-center">
+  {{#if navegacion}}
+   
+       {{#ifnavegacion navegacion}}
+     
+
+       {{/ifnavegacion}}
+ 
+   {{/if}}
+</div>
+    </form>
+
+    </div>

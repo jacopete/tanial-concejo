@@ -1,0 +1,150 @@
+<div class="titulo">
+
+ <h1>Vínculo laboral</h1>
+</div>
+<div class="contenedorcontratos">
+<div class="container-fluid ">
+ {{> contratos}}
+
+<form action="/contratos" method="POST">
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th  class="text-center texto" >Cedula</th>
+        <th class="text-center">Nombre completo</th>
+        <th class="text-center">Teléfono</th>
+        <th class="text-center">Celular</th>
+        <th class="text-center">Dirección</th>
+        <th class="text-center">Correo</th>
+        <th class="text-center">
+        <label for="tipo_vinculo" class="text-center">vinculo</label>
+        <select class="form-control" id="tipo_vinculo" name="tipo_vinculo"   onchange="this.form.submit()">
+        <option value="">Seleccionar</option>
+        <option {{selected tipo_vinculo "PLANTA"}}>PLANTA</option>
+        <option {{selected tipo_vinculo "CONTRATISTA"}}>CONTRATISTA</option>
+        </select>
+        </th>
+        <th class="text-center" for="tipo_contrato">Tipo de contrato
+        <select class="form-control" id="tipo_contrato" name="tipo_contrato"  onchange="this.form.submit()">
+        <option value="">Seleccionar</option>
+        <option {{selected tipo_contrato "CAD"}}>CAD</option>
+        <option  {{selected tipo_contrato "LNR"}}>LNR</option>
+        <option  {{selected tipo_contrato "NP"}}>NP</option>
+        <option  {{selected tipo_contrato "CTF"}}>CTF</option>
+        <option  {{selected tipo_contrato "PS"}}>PS</option>
+        </select>
+        </th>
+        <th class="text-center">Salario</th>
+        <th class="text-center">Fecha inicial</th>
+        <th class="text-center">Fecha final</th>
+        <th class="text-center">Cargo</th>
+        </th>
+        <th class="text-center">Dependencia
+        <select class="form-control" id="tipo" name="dependencia"   onchange="this.form.submit()" >
+        <option value="">Seleccionar</option>
+        <option {{selected dependencia "BACTERIOLOGA/ SECRETARIA SALUD"}}>BACTERIOLOGA/ SECRETARIA SALUD</option>
+        <option {{selected dependencia "BANCO AGRARIO"}}>BANCO AGRARIO</option>
+        <option {{selected dependencia "CENTRO DE GESTIÓN TECNOLOGICA Y SERVICIOS"}}>CENTRO DE GESTIÓN TECNOLOGICA Y SERVICIOS</option>
+        <option {{selected dependencia "CONCEJO MUNICIPAL"}}>CONCEJO MUNICIPAL</option>
+        <option {{selected dependencia "CVC"}}>CVC</option>
+        <option {{selected dependencia "DAGMA"}}>DAGMA</option>
+        <option {{selected dependencia "DESARROLLO ECONOMICO Y COMPETITIVIDAD"}}>DESARROLLO ECONOMICO Y COMPETITIVIDAD</option>
+        <option {{selected dependencia "FOMENTO INDERVALLE/ MONITORA"}}>FOMENTO INDERVALLE/ MONITORA</option>
+        <option {{selected dependencia "HACIENDA"}}>HACIENDA</option>
+        <option {{selected dependencia "HOME CARE"}}>HOME CARE</option>
+        <option {{selected dependencia "INDERVALLE"}}>INDERVALLE</option>
+        <option {{selected dependencia "SECREARIA DE LAS TICS"}}>SECREARIA DE LAS TICS</option>
+        <option {{selected dependencia "SECRETARIA DE BIENESTAR SOCIAL"}}>SECRETARIA DE BIENESTAR SOCIAL</option>
+        <option {{selected dependencia "SECRETARIA DE CULTURA"}}>SECRETARIA DE CULTURA</option>
+        <option {{selected dependencia "SECRETARIA DE DEPORTES"}}>SECRETARIA DE DEPORTES</option>
+        <option {{selected dependencia "SECRETARIA DE DESARROLLO ECONOMICO Y COMPETITIVIDAD"}}>SECRETARIA DE DESARROLLO ECONOMICO Y COMPETITIVIDAD</option>
+        <option {{selected dependencia "SECRETARIA DE EDUCACIÓN"}}>SECRETARIA DE EDUCACIÓN</option>
+        <option {{selected dependencia "SECRETARIA DE INFRAESTRUCTURA"}}>SECRETARIA DE INFRAESTRUCTURA</option>
+        <option {{selected dependencia "SECRETARIA DE SALUD"}}>SECRETARIA DE SALUD</option>
+        <option {{selected dependencia "SECRETARIA DE SALUD-LABORATORIO DEPARTAMENTAL"}}>SECRETARIA DE SALUD-LABORATORIO DEPARTAMENTAL</option>
+        <option {{selected dependencia "SECRETARIA DE VIVIENDA"}}>SECRETARIA DE VIVIENDA</option>
+        <option {{selected dependencia "SECRETARIA DEPORTES"}}>SECRETARIA DEPORTES</option>
+        <option {{selected dependencia "SECRETARIA GENERA"}}>SECRETARIA GENERA</option>
+        <option {{selected dependencia "SECRETARIA GENERAL-CALIDAD"}}>SECRETARIA GENERAL-CALIDAD</option>
+        <option {{selected dependencia "SECRETARIA GENERAL-DESPACHO"}}>SECRETARIA GENERAL-DESPACHO</option>
+        <option {{selected dependencia "SECRETARIA GENERAL-GESTION DOCUMENTAL"}}>SECRETARIA GENERAL-GESTION DOCUMENTAL</option>
+        <option {{selected dependencia "SECRETARIA GENERAL-GESTION DOCUMENTAL-472"}}>SECRETARIA GENERAL-GESTION DOCUMENTAL-472</option>
+        <option {{selected dependencia "SECRETARIA SALUD-DESPACHO"}}>SECRETARIA SALUD-DESPACHO</option>
+        <option {{selected dependencia "TRANSPARENCIA"}}>TRANSPARENCIA</option>
+        <option {{selected dependencia "VALLECAUCANA DE AGUAS"}}>VALLECAUCANA DE AGUAS</option>
+       
+      
+        
+        </select>
+        </th>
+        <th class="text-center">Entidad
+        <select class="form-control" id="entidad" name="entidad"   onchange="this.form.submit()">
+        <option value="">Seleccionar</option>
+        <option {{selected entidad "ALCALDIA"}}>ALCALDIA</option>
+        <option {{selected entidad "GOBERNACION"}}>GOBERNACION</option>
+        <option {{selected entidad "CONCEJO"}}>CONCEJO</option>
+        <option {{selected entidad "ICBF"}}>ICBF</option>
+        </select>
+        
+       
+     
+       
+   
+    
+      </tr>
+    
+    </thead>
+  
+    <tbody>
+        {{#each usuario}}
+      <tr>
+    
+       
+        <td>{{this.cedula}}</td>
+        <td>{{this.nombre_completo}}</td>
+        <td>{{this.telefono}}</td>
+        <td>{{this.celular}}</td>
+        <td>{{this.direccion}}</td>
+        <td>{{this.correo}}</td>
+        <td>{{this.tipo_vinculo}}</td>
+        <td>{{this.tipo_contrato}}</td>
+        <td>{{this.salario}}</td>
+        <td>{{this.fechai}}</td>
+        <td>{{this.fechat}}</td>
+        <td>{{this.cargo}}</td>
+        <td>{{this.dependencia}}</td>
+        <td>{{this.entidad}}</td>
+      
+
+        
+        <td><a href="/contratos/edictar/{{this.cedula}}"  class="btn btn-warning glyphicon glyphicon-wrench"></a></td>
+        <td><a href="/contratos/borrar/opcion/{{this.cedula}}"  class="btn btn-danger glyphicon glyphicon-trash"> </a></td>
+ 
+      
+      </tr>
+    
+      {{/each}}
+    </tbody>
+  </table> 
+</div>
+</div>
+
+<div class="d-flex justify-content-center">
+  {{#if navegacion}}
+  
+       {{#ifnavegacion navegacion}}
+     
+
+       {{/ifnavegacion}}
+ 
+   {{/if}}
+</div>
+
+
+    </form>
+  <td><a href="/contratos/descarga"  class="btn btn-danger glyphicon glyphicon-download text-center">  Descargar </a></td>
+    
+ 
+
+        
+      

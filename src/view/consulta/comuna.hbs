@@ -1,0 +1,60 @@
+<div class="titulo">
+<h1>Inscritos </h1>
+</div>
+<!--crear-->
+<div class="card col-md-2 crear">
+    <div class="card-body">
+ <a href="/consulta/crear"  class="btn btn-primary col-md-5 ">crear</a>
+ </div>
+</div>
+<div class="container p-5">
+   
+  <!-- Content here -->
+</div>
+
+<!--lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll-->
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">cedula</th>
+      <th scope="col">nombre_completo </th>
+      <th scope="col">direccion</th>
+      <th scope="col">telefono</th>
+      <th scope="col">correo</th>
+      <th scope="col">comuna</th>
+      <th scope="col">zona</th>
+      <th scope="col">Nombre del puesto</th>
+      <th scope="col">Nº puesto</th>
+      <th scope="col">edictar</th>
+      <th scope="col">borrar</th>
+     
+
+
+    </tr>
+  </thead>
+  <tbody>
+      {{#each usuario}}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{this.cedula}}</td>
+      <td>{{this.nombre_completo }}</td>
+      <td>{{this.direccion}}</td>
+      <td>{{this.telefono}}</td>
+      <td>{{this.correo}}</td>
+      <td>{{this.comuna}}</td>
+      <td>{{this.zona}}</td>
+      <td>{{this.nombre_del_puesto}}</td>
+      <td>{{this.puesto}}</td>
+    <td><a href="/consulta/edictar/{{this.cedula}}"  class="btn btn-warning">edictar</a></td>
+      <td><a href="/consulta/borrar/opcion/{{this.cedula}}"  class="btn btn-danger">borrar</a></td>
+     
+     
+    </tr>
+   
+     {{/each}}
+  </tbody>
+</table>

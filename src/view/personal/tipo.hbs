@@ -1,0 +1,60 @@
+
+<div class="titulo">
+<h1>  Personal </h1>
+</div>
+
+<div class="card  crear d-flex align-items-center">
+    <div class="card-body col-md-12 d-flex align-items-center" >
+ <a href="/personal/crear"  class="btn btn-primary col-md-20 ">crear</a>
+ </div>
+</div>
+<div class="container p-5">
+   
+  <!-- Content here -->
+</div>
+ 
+
+</form>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">cedula</th>
+      <th scope="col">nombre completo </th>
+    
+      <th scope="col">
+       
+     <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Tipo
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item"  href="/personal/tipo/Lider">Lider</a>
+    <a class="dropdown-item"  href="/personal/tipo/Funcionario">Funcionario</a>
+    <a class="dropdown-item"  href="/personal/tipo/Gestor">Gestor</a>
+     
+     </div>
+    
+      </div>
+       </th>
+      <th scope="col">gestor</th>
+      <th scope="col">edictar</th>
+      <th scope="col">borrar</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each usuario}}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{this.cedula}}</td>
+      <td>{{this.nombre_completo }}</td>
+      <td>{{this.tipo}}</td>
+      <td>{{this.cc_gestor}}</td>
+      <td><a href="/personal/edictar/{{this.cedula}}"  class="btn btn-warning">edictar</a></td>
+      <td><a href="/personal/borrar/opcion/{{this.cedula}}" class="btn btn-danger">borrar</a></td>
+     
+    </tr>
+   
+     {{/each}}
+  </tbody>
+</table>

@@ -1,0 +1,99 @@
+
+.contenedorpersonal{
+  width: 50%;
+}
+
+.texto{
+    text-align:top;
+}
+.botonesheader{
+  left: -80px;
+
+}
+.graficacard{
+  width: 30%;
+}
+.titulo{
+  width: 30%;
+  padding-left: 6%;
+  display: absolute;
+}
+.mensaje{
+  width: 80%;
+  padding-left: 15%;
+  position: fixed;
+}
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+  .navbar{
+    width: 100%;
+  }
+  body{
+background: #00227b;
+font-family: 'Oswald', sans-serif;
+overflow: hidden;
+width: 100vw;
+height: 100vh;
+overflow-y: auto;
+
+  }
+.contenedor{
+  width: 100vw;
+  height: 100vh;
+}
+.formulario{
+  width: 50%;
+  height: 50%;
+}
+.contenedorcontratos{
+  
+  font-size: 13px;
+}
+  .login{
+
+    width: 100%;
+    height: 100%;
+    background: url('/img/background.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  input[type=number]::-webkit-outer-spin-button,
+
+  input[type=number]::-webkit-inner-spin-button {
+  
+      -webkit-appearance: none;
+  
+      margin: 0;
+  
+  }
+  
+   
+  
+  input[type=number] {
+  
+      -moz-appearance:textfield;
+  
+  }
+ 

@@ -1,0 +1,212 @@
+<div class="titulo">
+<h1>  Personal </h1>
+</div>
+
+{{#if vista}}
+
+<div class="container-fluid ">
+  
+{{#each verificausuario}}
+<h4>Lista del {{this.tipo}} : {{this.nombre_completo }}  </h4>
+<h4>Cedula : {{this.cedula}}</h4>
+{{/each}}
+<div class="d-flex justify-content-around">
+
+<div scope="col"><h4>El numero de la consulta es : {{numero}}</h4></div>
+ <td><a href="/personal/"  class="btn btn-info">Regresar</a></td>
+
+</div>
+<br>
+<br>
+
+<form action="/personal/edictarpersona/" method="POST">
+  <table class="table text-center">
+    <thead >
+      
+      <tr class="text-center ">
+  
+        <th  class="text-center texto" >Cedula</th>
+        <th class="text-center">Nombre completo</th>
+        <th class="text-center">Dirección</th>
+        <th class="text-center">Teléfono</th>
+        <th class="text-center">Correo</th>
+        <th class="text-center">Comuna</th>
+        <th class="text-center">Zona</th>
+       
+       
+      
+      <th  class="text-center"  class="text-center" >Nombre del puesto</th>
+      <th><label for="zona">Nº puesto</label>   
+       </th>
+      <th  class="text-center">
+          <label for="mesa">Mesa</label>
+        
+           
+      </th> 
+        <th scope="col"></th>
+        <th scope="col"></th>
+    
+      </tr>
+    
+    </thead>
+  
+
+  
+   
+    <tbody>
+        {{#each usuario}}
+      <tr>
+     
+        <td>{{this.cedula}}</td>
+        <td>{{this.nombre_completo }}</td>
+        <td>{{this.direccion}}</td>
+        <td>{{this.telefono}}</td>
+        <td>{{this.correo}}</td>
+        <td>{{this.comuna}}</td>
+        <td>{{this.zona}}</td>
+        <td>{{this.nombre_del_puesto}}</td>
+        <td>{{this.puesto}}</td>
+        <td>{{this.mesa}}</td>
+        
+        <td><a href="/personal/edictarpersona/{{this.cedula}}"  class="btn btn-warning glyphicon glyphicon-wrench"></a></td>
+        <td><a href="/personal/borrarpersona/opcion/{{this.cedula}}"  class="btn btn-danger glyphicon glyphicon-trash"> </a></td>
+ 
+      
+      </tr>
+    
+      {{/each}}
+    </tbody>
+  </table> 
+
+<div class="d-flex justify-content-center">
+  {{#if navegacion}}
+  
+       {{#ifnavegacion navegacion}}
+     
+
+       {{/ifnavegacion}}
+ 
+   {{/if}}
+</div>
+    </form>
+<td><a href="/personal/descargalistalf"  class="btn btn-danger glyphicon glyphicon-download text-center">  Descargar </a></td>
+    </div>
+{{else}}
+
+<div class="container-fluid ">
+  {{#each verificausuario}}
+
+<h4>Lista del {{this.tipo}} : {{this.nombre_completo }}  </h4>
+  <h4>Comuna : {{this.comuna}}</h4>
+<h4>Cedula : {{this.cedula}}</h4>
+<div class="container">
+  <div style="float:right"><a href="/personal/"  class="btn btn-info">Regresar</a></div>
+  </div>
+
+<div class="d-flex justify-content-around">
+
+<div scope="col"><h4>Número de personas (gestores, lideres y funcionarios) en total de la comuna : {{../numerototal}} </h4></div>
+<div scope="col"><h4>Número de inscritos en total de la comuna : {{../reportecomunatotal}} </h4></div>
+
+
+
+</div>
+{{#if ../textomostrar}}
+<div class="d-flex justify-content-around">
+
+<div scope="col"><h5>Número de personas (gestores, lideres y funcionarios) del gestor {{this.nombre_completo }} : {{../numero}} </h5></div>
+
+<div scope="col"><h5>Número de inscritos en total del gestor  {{this.nombre_completo }} : {{../reportecomuna}} </h5></div>
+
+
+
+
+</div>
+{{/if}}
+
+<div class="container-fluid">
+  <td><h5>gestor: {{../conteo_gestor}}</h5></td>
+<td><h5>funcionarios : {{../conteo_funcionario}}</h5></td>
+<td><h5>lider estructura : {{../conteo_estructura}}</h5></td>
+<td><h5>lider independiente : {{../conteo_independiente}}</h5></td>
+</div>
+
+
+
+
+
+ {{/each}}
+<br>
+<br>
+
+<form action="/personal" method="POST">
+  <table class="table">
+    <thead>
+      <tr>
+     
+        <th scope="col">cedula</th>
+        <th scope="col">Nombre completo</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Comuna</th>
+        <th scope="col">zona</th>
+        <th scope="col">Nº puesto</th>
+        <th scope="col">Nombre del puesto</th>
+        <th scope="col">Nº votos</th>
+        <th scope="col">Reporte</th>
+      
+      </tr>
+    
+    </thead>
+  
+
+  
+    <tbody>
+        {{#each usuario}}
+      <tr>
+       
+        <td>{{this.cedula}}</td>
+        <td>{{this.nombre_completo }}</td>
+        <td>{{this.telefono }}</td>
+        <td>{{this.correo }}</td>
+        <td>{{this.tipo}}</td>
+        <td>{{this.comuna}}</td>
+        <td>{{this.zona}}</td>
+        <td>{{this.puesto}}</td>
+        <td>{{this.nombre_del_puesto}}</td>
+        <td>{{this.numero_votos }}</td>
+        <td>{{this.reporte }}</td>
+      
+ {{#each ../verificausuario}}
+ 
+ 
+      <td><a href="/personal/listagestor/{{../this.cedula}}?{{this.cedula}}"  class="btn btn-info glyphicon glyphicon glyphicon-eye-open"></a></td>
+      <td><a href="/personal/edictargestores1/{{../this.cedula}}?{{this.cedula}}"  class="btn btn-warning glyphicon glyphicon-wrench"></a></td>
+      <td><a href="/personal/borrargestores1/opcion/{{../this.cedula}}?{{this.cedula}}"  class="btn btn-danger glyphicon glyphicon-trash"></a></td>
+      
+       
+    {{/each}}  
+      </tr>
+    
+      {{/each}}
+    </tbody>
+  </table> 
+<div class="d-flex justify-content-center">
+  {{#if navegacion}}
+   
+       {{#ifnavegacion navegacion}}
+     
+
+       {{/ifnavegacion}}
+ 
+   {{/if}}
+</div>
+    </form>
+<td><a href="/personal/descargalistalf"  class="btn btn-danger glyphicon glyphicon-download text-center">  Descargar </a></td>
+    </div>
+
+  {{/if}}
+
+
+  

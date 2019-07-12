@@ -1,0 +1,377 @@
+<div class="titulo">
+<h1>Inscritos </h1>
+</div>
+
+
+<div class="container-fluid ">
+{{> consultasvotantesvista}}
+
+<form action="/consultavista" method="POST">
+  <table class="table text-center">
+    <thead >
+      
+      <tr class="text-center ">
+  
+        <th  class="text-center texto" >Cedula</th>
+        <th class="text-center">Nombre completo</th>
+        <th class="text-center">Dirección</th>
+        <th class="text-center">Teléfono</th>
+        <th class="text-center">Correo</th>
+       
+        <th  class="text-center">
+          <label for="comuna" class="text-center">Comuna</label>
+          <select class="form-control" id="comuna" name="comuna" onchange="this.form.submit()">
+            <option selected value="0">Seleciona</option>
+            <option {{selected comuna "1"}}>1</option>
+            <option {{selected comuna "2"}}>2</option>
+            <option {{selected comuna "3"}}>3</option>
+            <option {{selected comuna "4"}}>4</option>
+            <option {{selected comuna "5"}}>5</option>
+            <option {{selected comuna "6"}}>6</option>
+            <option {{selected comuna "7"}}>7</option>
+            <option {{selected comuna "8"}}>8</option>
+            <option {{selected comuna "9"}}>9</option>
+            <option {{selected comuna "10"}}>10</option>
+            <option {{selected comuna "11"}}>11</option>
+            <option {{selected comuna "12"}}>12</option>
+            <option {{selected comuna "13"}}>13</option>
+            <option {{selected comuna "14"}}>14</option>
+            <option {{selected comuna "15"}}>15</option>
+            <option {{selected comuna "16"}}>16</option>
+            <option {{selected comuna "17"}}>17</option>
+            <option {{selected comuna "18"}}>18</option>
+            <option {{selected comuna "19"}}>19</option>
+            <option {{selected comuna "20"}}>20</option>
+            <option {{selected comuna "21"}}>21</option>
+            <option {{selected comuna "22"}}>22</option>
+            <option {{selected comuna "23"}}>23</option>
+            <option {{selected comuna "24"}}>24</option>
+            <option {{selected comuna "25"}}>25</option>
+            <option {{selected comuna "26"}}>26</option>
+            <option {{selected comuna "27"}}>27</option>
+            <option {{selected comuna "28"}}>28</option>
+            <option {{selected comuna "29"}}>29</option>
+            <option {{selected comuna "30"}}>30</option>
+            <option {{selected comuna "31"}}>31</option>
+            <option {{selected comuna "32"}}>32</option>
+            <option {{selected comuna "33"}}>33</option>
+            <option {{selected comuna "34"}}>34</option>
+            <option {{selected comuna "35"}}>35</option>
+            <option {{selected comuna "36"}}>36</option>
+            <option {{selected comuna "37"}}>37</option>
+            <option {{selected comuna "38"}}>38</option>
+          </select>  
+      </th > 
+      <th  class="text-center">       
+          <label for="zona" >Zona</label>
+           <select class="form-control" id="zona" name="zona" onchange="this.form.submit()">
+            <option selected value="0">Seleciona</option>
+            <option {{selected zona "1"}}>1</option>
+            <option {{selected zona "2"}}>2</option>
+            <option {{selected zona "3"}}>3</option>
+            <option {{selected zona "4"}}>4</option>
+            <option {{selected zona "5"}}>5</option>
+            <option {{selected zona "6"}}>6</option>
+            <option {{selected zona "7"}}>7</option>
+            <option {{selected zona "8"}}>8</option>
+            <option {{selected zona "9"}}>9</option>
+            <option {{selected zona "10"}}>10</option>
+            <option {{selected zona "11"}}>11</option>
+            <option {{selected zona "12"}}>12</option>
+            <option {{selected zona "13"}}>13</option>
+            <option {{selected zona "14"}}>14</option>
+            <option {{selected zona "15"}}>15</option>
+            <option {{selected zona "16"}}>16</option>
+            <option {{selected zona "17"}}>17</option>
+            <option {{selected zona "18"}}>18</option>
+            <option {{selected zona "19"}}>19</option>
+            <option {{selected zona "20"}}>20</option>
+            <option {{selected zona "21"}}>21</option>
+            <option {{selected zona "22"}}>22</option>
+            <option {{selected zona "23"}}>23</option>
+            <option {{selected zona "24"}}>24</option>
+            <option {{selected zona "25"}}>25</option>
+            <option {{selected zona "26"}}>26</option>
+            <option {{selected zona "27"}}>27</option>
+            <option {{selected zona "28"}}>28</option>
+            <option {{selected zona "29"}}>29</option>
+            <option {{selected zona "30"}}>30</option>
+            <option {{selected zona "31"}}>31</option>
+            <option {{selected zona "32"}}>32</option>
+            <option {{selected zona "33"}}>33</option>
+            <option {{selected zona "90"}}>90</option>
+            <option {{selected zona "98"}}>98</option>
+            <option {{selected zona "99"}}>99</option>
+          </select>
+      </th>
+      <th  class="text-center">Nombre del puesto</th>
+      <th>
+          <label for="zona">Nº puesto</label>
+          <select class="form-control" id="puesto" name="puesto" onchange="this.form.submit()">
+            <option selected value="0">Seleciona</option>
+            <option {{selected puesto "1"}}>1</option>
+            <option {{selected puesto "2"}}>2</option>
+            <option {{selected puesto "3"}}>3</option>
+            <option {{selected puesto "4"}}>4</option>
+            <option {{selected puesto "5"}}>5</option>
+            <option {{selected puesto "6"}}>6</option>
+            <option {{selected puesto "7"}}>7</option>
+            <option {{selected puesto "8"}}>8</option>
+            <option {{selected puesto "9"}}>9</option>
+            <option {{selected puesto "10"}}>10</option>
+            <option {{selected puesto "11"}}>11</option>
+            <option {{selected puesto "12"}}>12</option>
+            <option {{selected puesto "13"}}>13</option>
+            <option {{selected puesto "14"}}>14</option>
+            <option {{selected puesto "15"}}>15</option>
+            <option {{selected puesto "16"}}>16</option>
+            <option {{selected puesto "17"}}>17</option>
+            <option {{selected puesto "18"}}>18</option>
+            <option {{selected puesto "19"}}>19</option>
+            <option {{selected puesto "20"}}>20</option>
+            <option {{selected puesto "21"}}>21</option>
+            <option {{selected puesto "22"}}>22</option>
+            <option {{selected puesto "23"}}>23</option>
+            <option {{selected puesto "24"}}>24</option>
+            <option {{selected puesto "25"}}>25</option>
+            <option {{selected puesto "26"}}>26</option>
+            <option {{selected puesto "27"}}>27</option>
+            <option {{selected puesto "28"}}>28</option>
+            <option {{selected puesto "29"}}>29</option>
+            <option {{selected puesto "30"}}>30</option>
+            <option {{selected puesto "31"}}>31</option>
+            <option {{selected puesto "32"}}>32</option>
+            <option {{selected puesto "33"}}>33</option>
+            <option {{selected puesto "34"}}>34</option>
+            <option {{selected puesto "35"}}>35</option>
+            <option {{selected puesto "36"}}>36</option>
+            <option {{selected puesto "37"}}>37</option>
+            <option {{selected puesto "38"}}>38</option>
+            <option {{selected puesto "39"}}>39</option>
+            <option {{selected puesto "40"}}>40</option>
+            <option {{selected puesto "41"}}>41</option>
+            <option {{selected puesto "42"}}>42</option>
+            <option {{selected puesto "43"}}>43</option>
+            <option {{selected puesto "44"}}>44</option>
+            <option {{selected puesto "45"}}>45</option>
+            <option {{selected puesto "46"}}>46</option>
+            <option {{selected puesto "47"}}>47</option>
+            <option {{selected puesto "48"}}>48</option>
+            <option {{selected puesto "49"}}>49</option>
+            <option {{selected puesto "50"}}>50</option>
+            <option {{selected puesto "51"}}>51</option>
+            <option {{selected puesto "52"}}>52</option>
+            <option {{selected puesto "53"}}>53</option>
+            <option {{selected puesto "54"}}>54</option>
+            <option {{selected puesto "55"}}>55</option>
+            <option {{selected puesto "56"}}>56</option>
+            <option {{selected puesto "57"}}>57</option>
+            <option {{selected puesto "58"}}>58</option>
+            <option {{selected puesto "59"}}>59</option>
+            <option {{selected puesto "60"}}>60</option>
+            <option {{selected puesto "61"}}>61</option>
+            <option {{selected puesto "62"}}>62</option>
+            <option {{selected puesto "63"}}>63</option>
+            <option {{selected puesto "64"}}>64</option>
+            <option {{selected puesto "65"}}>65</option>
+            <option {{selected puesto "66"}}>66</option>
+            <option {{selected puesto "67"}}>67</option>
+            <option {{selected puesto "68"}}>68</option>
+            <option {{selected puesto "69"}}>69</option>
+            <option {{selected puesto "70"}}>70</option>
+            <option {{selected puesto "71"}}>71</option>
+            <option {{selected puesto "72"}}>72</option>
+            <option {{selected puesto "73"}}>73</option>
+            <option {{selected puesto "74"}}>74</option>
+            <option {{selected puesto "75"}}>75</option>
+            <option {{selected puesto "76"}}>76</option>
+            <option {{selected puesto "77"}}>77</option>
+            <option {{selected puesto "78"}}>78</option>
+            <option {{selected puesto "79"}}>79</option>
+            <option {{selected puesto "80"}}>80</option>
+            <option {{selected puesto "81"}}>81</option>
+            <option {{selected puesto "82"}}>82</option>
+            <option {{selected puesto "83"}}>83</option>
+            <option {{selected puesto "84"}}>84</option>
+            <option {{selected puesto "85"}}>85</option>
+            <option {{selected puesto "86"}}>86</option>
+            <option {{selected puesto "87"}}>87</option>
+            <option {{selected puesto "88"}}>88</option>
+            <option {{selected puesto "89"}}>89</option>
+            <option {{selected puesto "90"}}>90</option>
+            <option {{selected puesto "91"}}>91</option>
+            <option {{selected puesto "92"}}>92</option>
+            <option {{selected puesto "93"}}>93</option>
+            <option {{selected puesto "94"}}>94</option>
+            <option {{selected puesto "95"}}>95</option>
+            <option {{selected puesto "96"}}>96</option>
+            <option {{selected puesto "97"}}>97</option>
+            <option {{selected puesto "98"}}>98</option>
+            <option {{selected puesto "99"}}>99</option>
+            <option {{selected puesto "100"}}>100</option>
+            
+
+
+            
+          </select>
+       </th>
+      <th  class="text-center">
+          <label for="mesa">Mesa</label>
+           <select class="form-control" id="mesa" name="mesa" onchange="this.form.submit()">
+            <option selected value="0">Seleciona</option>
+            <option {{selected mesa "1"}}>1</option>
+            <option {{selected mesa "2"}}>2</option>
+            <option {{selected mesa "3"}}>3</option>
+            <option {{selected mesa "4"}}>4</option>
+            <option {{selected mesa "5"}}>5</option>
+            <option {{selected mesa "6"}}>6</option>
+            <option {{selected mesa "7"}}>7</option>
+            <option {{selected mesa "8"}}>8</option>
+            <option {{selected mesa "9"}}>9</option>
+            <option {{selected mesa "10"}}>10</option>
+            <option {{selected mesa "11"}}>11</option>
+            <option {{selected mesa "12"}}>12</option>
+            <option {{selected mesa "13"}}>13</option>
+            <option {{selected mesa "14"}}>14</option>
+            <option {{selected mesa "15"}}>15</option>
+            <option {{selected mesa "16"}}>16</option>
+            <option {{selected mesa "17"}}>17</option>
+            <option {{selected mesa "18"}}>18</option>
+            <option {{selected mesa "19"}}>19</option>
+            <option {{selected mesa "20"}}>20</option>
+            <option {{selected mesa "21"}}>21</option>
+            <option {{selected mesa "22"}}>22</option>
+            <option {{selected mesa "23"}}>23</option>
+            <option {{selected mesa "24"}}>24</option>
+            <option {{selected mesa "25"}}>25</option>
+            <option {{selected mesa "26"}}>26</option>
+            <option {{selected mesa "27"}}>27</option>
+            <option {{selected mesa "28"}}>28</option>
+            <option {{selected mesa "29"}}>29</option>
+            <option {{selected mesa "30"}}>30</option>
+            <option {{selected mesa "31"}}>31</option>
+            <option {{selected mesa "32"}}>32</option>
+            <option {{selected mesa "33"}}>33</option>
+            <option {{selected mesa "34"}}>34</option>
+            <option {{selected mesa "35"}}>35</option>
+            <option {{selected mesa "36"}}>36</option>
+            <option {{selected mesa "37"}}>37</option>
+            <option {{selected mesa "38"}}>38</option>
+            <option {{selected mesa "39"}}>39</option>
+            <option {{selected mesa "40"}}>40</option>
+            <option {{selected mesa "41"}}>41</option>
+            <option {{selected mesa "42"}}>42</option>
+            <option {{selected mesa "43"}}>43</option>
+            <option {{selected mesa "44"}}>44</option>
+            <option {{selected mesa "45"}}>45</option>
+            <option {{selected mesa "46"}}>46</option>
+            <option {{selected mesa "47"}}>47</option>
+            <option {{selected mesa "48"}}>48</option>
+            <option {{selected mesa "49"}}>49</option>
+            <option {{selected mesa "50"}}>50</option>
+            <option {{selected mesa "51"}}>51</option>
+            <option {{selected mesa "52"}}>52</option>
+            <option {{selected mesa "53"}}>53</option>
+            <option {{selected mesa "54"}}>54</option>
+            <option {{selected mesa "55"}}>55</option>
+            <option {{selected mesa "56"}}>56</option>
+            <option {{selected mesa "57"}}>57</option>
+            <option {{selected mesa "58"}}>58</option>
+            <option {{selected mesa "59"}}>59</option>
+            <option {{selected mesa "60"}}>60</option>
+            <option {{selected mesa "61"}}>61</option>
+            <option {{selected mesa "62"}}>62</option>
+            <option {{selected mesa "63"}}>63</option>
+            <option {{selected mesa "64"}}>64</option>
+            <option {{selected mesa "65"}}>65</option>
+            <option {{selected mesa "66"}}>66</option>
+            <option {{selected mesa "67"}}>67</option>
+            <option {{selected mesa "68"}}>68</option>
+            <option {{selected mesa "69"}}>69</option>
+            <option {{selected mesa "70"}}>70</option>
+            <option {{selected mesa "71"}}>71</option>
+            <option {{selected mesa "72"}}>72</option>
+            <option {{selected mesa "73"}}>73</option>
+            <option {{selected mesa "74"}}>74</option>
+            <option {{selected mesa "75"}}>75</option>
+            <option {{selected mesa "76"}}>76</option>
+            <option {{selected mesa "77"}}>77</option>
+            <option {{selected mesa "78"}}>78</option>
+            <option {{selected mesa "79"}}>79</option>
+            <option {{selected mesa "80"}}>80</option>
+            <option {{selected mesa "81"}}>81</option>
+            <option {{selected mesa "82"}}>82</option>
+            <option {{selected mesa "83"}}>83</option>
+            <option {{selected mesa "84"}}>84</option>
+            <option {{selected mesa "85"}}>85</option>
+            <option {{selected mesa "86"}}>86</option>
+            <option {{selected mesa "87"}}>87</option>
+            <option {{selected mesa "88"}}>88</option>
+            <option {{selected mesa "89"}}>89</option>
+            <option {{selected mesa "90"}}>90</option>
+            <option {{selected mesa "91"}}>91</option>
+            <option {{selected mesa "92"}}>92</option>
+            <option {{selected mesa "93"}}>93</option>
+            <option {{selected mesa "94"}}>94</option>
+            <option {{selected mesa "95"}}>95</option>
+            <option {{selected mesa "96"}}>96</option>
+            <option {{selected mesa "97"}}>97</option>
+            <option {{selected mesa "98"}}>98</option>
+            <option {{selected mesa "99"}}>99</option>
+            <option {{selected mesa "100"}}>100</option>
+          </select>      
+      </th> 
+      <th class="text-center">CC responsable</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    
+      </tr>
+    
+    </thead>
+  
+
+  
+   
+    <tbody>
+        {{#each usuario}}
+      <tr>
+     
+        <td>{{this.cedula}}</td>
+        <td>{{this.nombre_completo }}</td>
+        <td>{{this.direccion}}</td>
+        <td>{{this.telefono}}</td>
+        <td>{{this.correo}}</td>
+        <td>{{this.comuna}}</td>
+        <td>{{this.zona}}</td>
+        <td>{{this.nombre_del_puesto}}</td>
+        <td>{{this.puesto}}</td>
+        <td>{{this.mesa}}</td>
+        <td>{{cc_lider_funcionario}}</td>
+      
+      
+      </tr>
+    
+      {{/each}}
+    </tbody>
+  </table> 
+
+<div class="d-flex justify-content-center">
+  {{#if navegacion}}
+  
+       {{#ifnavegacion navegacion}}
+     
+
+       {{/ifnavegacion}}
+ 
+   {{/if}}
+</div>
+
+
+
+    </form>
+  <td><a href="/consultavista/descarga"  class="btn btn-danger glyphicon glyphicon-download text-center">  Descargar </a></td>
+    </div>
+ 
+
+        
+      

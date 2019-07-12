@@ -1,0 +1,563 @@
+
+ <script src="/src/routes/graficas.js"></script>
+<div class="d-flex justify-content-center">
+<h1>Graficas</h1>
+</div>
+<!--<canvas id="#mychart" class="col-ms-8" width="770" height="385"></canvas>-->
+<div class="d-flex justify-content-center">
+<h1>REPORTE DE LIDERES EN LA COMUNA</h1>
+</div>
+
+<div class="d-flex justify-content-center">
+<div class="card   graficacard ">
+                <div class="card-body ">
+                    <form action="/graficas" method="POST">
+                        <div class="form-group">
+                        <th  class="text-center">
+          <label for="reportecomuna" class="text-center">Comuna</label>
+          <select  for="reportecomuna" class="form-control" id="reportecomuna" name="reportecomuna" onchange="this.form.submit()">
+            <option selected value="0">{{reportecomuna}}</option>
+
+            <option {{selected comuna "1"}}>1</option>
+            <option {{selected comuna "2"}}>2</option>
+            <option {{selected comuna "3"}}>3</option>
+            <option {{selected comuna "4"}}>4</option>
+            <option {{selected comuna "5"}}>5</option>
+            <option {{selected comuna "6"}}>6</option>
+            <option {{selected comuna "7"}}>7</option>
+            <option {{selected comuna "8"}}>8</option>
+            <option {{selected comuna "9"}}>9</option>
+            <option {{selected comuna "10"}}>10</option>
+            <option {{selected comuna "11"}}>11</option>
+            <option {{selected comuna "12"}}>12</option>
+            <option {{selected comuna "13"}}>13</option>
+            <option {{selected comuna "14"}}>14</option>
+            <option {{selected comuna "15"}}>15</option>
+            <option {{selected comuna "16"}}>16</option>
+            <option {{selected comuna "17"}}>17</option>
+            <option {{selected comuna "18"}}>18</option>
+            <option {{selected comuna "19"}}>19</option>
+            <option {{selected comuna "20"}}>20</option>
+            <option {{selected comuna "21"}}>21</option>
+            <option {{selected comuna "22"}}>22</option>
+            <option {{selected comuna "23"}}>23</option>
+            <option {{selected comuna "24"}}>24</option>
+            <option {{selected comuna "25"}}>25</option>
+            <option {{selected comuna "26"}}>26</option>
+            <option {{selected comuna "27"}}>27</option>
+            <option {{selected comuna "28"}}>28</option>
+            <option {{selected comuna "29"}}>29</option>
+            <option {{selected comuna "30"}}>30</option>
+            <option {{selected comuna "31"}}>31</option>
+            <option {{selected comuna "32"}}>32</option>
+            <option {{selected comuna "33"}}>33</option>
+            <option {{selected comuna "34"}}>34</option>
+            <option {{selected comuna "35"}}>35</option>
+            <option {{selected comuna "36"}}>36</option>
+            <option {{selected comuna "37"}}>37</option>
+            <option {{selected comuna "38"}}>38</option>
+            <option {{selected comuna "39"}}>39</option>
+            
+
+          </select>  
+      </th > 
+                        </div>
+                      
+
+                   
+                </div>
+</div>
+</div>
+       
+
+
+<div class="d-flex justify-content-center">
+ <H6>REPORTADOS :  {{totalreportecomuna}}  NUMERO DE (GESTORES,LIDERES,FUNCIONARIOS) : {{conteo_lider}}</H6> 
+</div>
+<div class="d-flex justify-content-center">
+ <H6> EN CALI :  {{conteo_comuna_dentro_comuna}}   FUERA DE CALI : {{conteo_comuna_fuera_cali}} EN LA COMUNA : {{contartotalpersonascomuna}} EN OTRAS COMUNAS :  {{conteo_comuna_fuera_comuna}}</H6>
+ 
+</div>
+<div class="d-flex justify-content-center">
+ <H6>GESTOR :  {{conteo_gestor}}  FUNCIONARIO : {{conteo_funcionario}} 
+     LIDER ESTRUCTURA : {{conteo_lider_estrutura}} LIDER INDEPENDIENTE : {{conteo_independiente}}</H6> 
+</div>
+<div class="container">
+<canvas id="myChart3"></canvas>
+</div>
+
+<div class="container">
+<canvas id="myChart5"></canvas>
+</div>
+
+
+<div class="container contenedorpersonal">
+    <div class="d-flex justify-content-center">
+        <h1>PERSONAL</h1>
+    </div>
+    
+<table class="table text-center">
+    <tbody>
+        {{#each gestor}} 
+      <tr>                   
+        <td>{{this.tipo}}</td>
+        <td> <button class="btn btn-danger" id="cedula" name="cedula" onchange="this.form.submit()" value="{{this.cedula}}">{{this.nombre_completo}}</butto> </td>
+              
+      </tr>
+      {{/each}}
+      {{#each funcionario}} 
+      <tr>                   
+        <td>{{this.tipo}}</td>
+        <td> <button class="btn btn-primary" id="cedula" name="cedula" onchange="this.form.submit()" value="{{this.cedula}}">{{this.nombre_completo}}</butto> </td>
+      </tr>
+      {{/each}}
+       {{#each lider_estrutura}} 
+      <tr>                   
+        <td>{{this.tipo}}</td>
+        <td> <button class="btn btn-success" id="cedula" name="cedula" onchange="this.form.submit()" value="{{this.cedula}}">{{this.nombre_completo}}</butto> </td>
+      </tr>
+      {{/each}}
+       {{#each lider_independiente}} 
+      <tr>                   
+        <td>{{this.tipo}}</td>
+        <td> <button class="btn btn-secondary" id="cedula" name="cedula" onchange="this.form.submit()" value="{{this.cedula}}">{{this.nombre_completo}}</butto> </td>
+      </tr>
+      {{/each}}
+        
+    </tbody>
+</table>
+</div>
+
+ </form>
+
+         
+
+<div class="d-flex justify-content-center">
+{{#each usuariolider}}
+<h3>GRAFICA DEL {{this.tipo}} :{{this.nombre_completo}}</h3>
+
+{{/each}}
+</div>
+<div class="d-flex justify-content-center">
+ <H6>Total de inscritos :{{totallider}}    Total de inscritos en cali : {{totallidercali}}    Fuera de cali :{{totalfueralider}} </H6> 
+</div>
+
+
+
+<div class="container">
+<canvas id="myChart4"></canvas>
+</div>            
+       
+             
+          
+
+
+     
+
+<div class="d-flex justify-content-center">
+<h1>INSCRITOS POR COMUNAS</h1>
+</div>
+<div class="d-flex justify-content-center">
+ <H6>Total de inscritos :{{total}}    Total de inscritos en cali : {{totalvalle}}    Fuera de cali :{{restadeltotal}} </H6> 
+</div>
+<div class="container">
+<canvas id="myChart"></canvas>
+</div>
+<div class="d-flex justify-content-center">
+<h1>MAPA ELECTORAL POR COMUNA</h1>
+</div>
+<div class="container">
+<canvas id="myChart2"></canvas>
+</div>
+
+<script>
+
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: [
+        'Comuna 1', 'Comuna 2', 'Comuna 3', 'Comuna 4', 'Comuna 5', 
+        'Comuna 6', 'Comuna 7', 'Comuna 8', 'Comuna 9', 'Comuna 10',
+        'Comuna 11', 'Comuna 12', 'Comuna 13', 'Comuna 14', 'Comuna 15',
+        'Comuna 16', 'Comuna 17', 'Comuna 18', 'Comuna 19', 'Comuna 20',
+        'Comuna 21', 'Comuna 22','Comuna 23: FELIDIA','Comuna 24 : HORMIGUERO','Comuna 25 : LA SIRENA',
+        'Comuna 26: LA CASTILLA','Comuna 27: LA ELVIRA','Comuna 28: LA LEONERA',
+        'Comuna 29: LA PAZ','Comuna 30: GOLONDRINAS','Comuna 31: LOS ANDES','Comuna 32: VILLA CARMELO',
+        'Comuna 33: MONTEBELLO','Comuna 34: NAVARRO','Comuna 35: PANCE',
+        'Comuna 36: PICHINDE','Comuna 37:EL SALADITO','Comuna 38:LA BUITRERA','OTROS'
+        
+        ],
+        datasets: [{
+            label: 'Total de inscritos : '+{{total}} ,
+           
+            backgroundColor: 'rgba(0, 191, 165, 1)',
+            borderColor: 'rgba(100,255,218,1)',
+            data: [
+            {{#each comunas}}
+                {{this}},
+            {{/each}}
+          
+           
+            
+            ]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+
+
+
+var ctx2 = document.getElementById('myChart2').getContext('2d');
+var chart = new Chart(ctx2, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: [
+        'Comuna 1', 'Comuna 2', 'Comuna 3', 'Comuna 4', 'Comuna 5', 
+        'Comuna 6', 'Comuna 7', 'Comuna 8', 'Comuna 9', 'Comuna 10',
+        'Comuna 11', 'Comuna 12', 'Comuna 13', 'Comuna 14', 'Comuna 15',
+        'Comuna 16', 'Comuna 17', 'Comuna 18', 'Comuna 19', 'Comuna 20',
+        'Comuna 21', 'Comuna 22','Comuna 23: FELIDIA','Comuna 24 : HORMIGUERO','Comuna 25 : LA SIRENA',
+        'Comuna 26: LA CASTILLA','Comuna 27: LA ELVIRA','Comuna 28: LA LEONERA',
+        'Comuna 29: LA PAZ','Comuna 30: GOLONDRINAS','Comuna 31: LOS ANDES','Comuna 32: VILLA CARMELO',
+        'Comuna 33: MONTEBELLO','Comuna 34: NAVARRO','Comuna 35: PANCE',
+        'Comuna 36: PICHINDE','Comuna 37:EL SALADITO','Comuna 38:LA BUITRERA','Zona 90'
+        
+        
+        ],
+        datasets: [{
+            label: 'Total de inscritos en cali: '+{{totalvalle}} ,
+        
+            backgroundColor: 'rgba(0, 191, 165, 1)',
+            borderColor: 'rgba(100,255,218,1)',
+            data: [
+            {{#each comuna_votantes}}
+                {{this}},
+            {{/each}}
+            {{zona90}}
+        
+            
+            ]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+
+
+var container = document.getElementById('container');
+var ctx3 = document.getElementById('myChart3').getContext('2d');
+data1={
+labels: [
+         {{#each gestor}}
+
+                 "{{this.nombre_completo}}",
+        {{/each}}
+          {{#each funcionario}}
+
+                 "{{this.nombre_completo}}" ,
+        {{/each}}
+        
+        {{#each lider_estrutura}}
+
+                 "{{this.nombre_completo}}" ,
+        {{/each}}
+        {{#each lider_independiente}}
+
+                 "{{this.nombre_completo}}" ,
+        {{/each}}
+        
+        ],
+       
+        datasets: [
+          {
+            label: 'NUMERO DE VOTOS ESPERADO',
+        
+            backgroundColor: 'rgba(0,0,0, 1)',
+            borderColor: 'rgba(255,255,255, 1)',
+            data: [
+             {{#each gestor}}
+                {{this.numero_votos}},
+            {{/each}}
+             {{#each funcionario}}
+                {{this.numero_votos}},
+            {{/each}}
+             {{#each lider_estrutura}}
+                {{this.numero_votos}},
+            {{/each}}
+             {{#each lider_independiente}}
+                {{this.numero_votos}},
+            {{/each}}
+            
+                      
+            ]
+        },
+        {
+            label: 'REPORTE (GESTOR)',
+        
+            backgroundColor: 'rgba(255,82,82,1)',
+            borderColor: 'rgba(255,82,82,1)',
+            data: [
+             {{#each gestor}}
+                {{this.reporte}},
+            {{/each}}
+              
+                      
+            ]
+        },
+        {
+            label: 'REPORTE (FUNCIONARIO)',
+        
+            backgroundColor: 'rgba(13,71,161,1)',
+            borderColor: 'rgba(13,71,161,1)',
+            data: [
+             {{#each gestor}}
+                null,
+            {{/each}}
+              {{#each funcionario}}
+                {{this.reporte}} ,
+                {{/each}}
+           
+                      
+            ]
+        },
+        {
+            label: 'REPORTE (LIDER ESTRUCTURA)',
+        
+            backgroundColor: 'rgba(0, 191, 0, 1)',
+            borderColor: 'rgba(0, 191, 0, 1)',
+            data: [
+             {{#each gestor}}
+                null,
+            {{/each}}
+              {{#each funcionario}}
+                null,
+            {{/each}}
+              {{#each lider_estrutura}}
+                {{this.reporte}} ,
+                {{/each}}
+           
+                      
+            ]
+        },
+         {
+            label: 'REPORTE (LIDER INDEPENDIENTE)',
+        
+            backgroundColor: 'rgba(121,85,72, 1)',
+            borderColor: 'rgba(121,85,72, 1)',
+            data: [
+             {{#each gestor}}
+                null,
+            {{/each}}
+              {{#each funcionario}}
+                null,
+            {{/each}}
+              {{#each lider_estrutura}}
+                null ,
+            {{/each}}
+              {{#each lider_independiente}}
+                {{this.reporte}},
+            {{/each}}
+                      
+            ]
+        }
+       
+        
+        
+        ]
+};
+var ctx4 = document.getElementById('myChart4').getContext('2d');
+var chart = new Chart(ctx4, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: [
+        'Comuna 1', 'Comuna 2', 'Comuna 3', 'Comuna 4', 'Comuna 5', 
+        'Comuna 6', 'Comuna 7', 'Comuna 8', 'Comuna 9', 'Comuna 10',
+        'Comuna 11', 'Comuna 12', 'Comuna 13', 'Comuna 14', 'Comuna 15',
+        'Comuna 16', 'Comuna 17', 'Comuna 18', 'Comuna 19', 'Comuna 20',
+        'Comuna 21', 'Comuna 22','Comuna 23: FELIDIA','Comuna 24 : HORMIGUERO','Comuna 25 : LA SIRENA',
+        'Comuna 26: LA CASTILLA','Comuna 27: LA ELVIRA','Comuna 28: LA LEONERA',
+        'Comuna 29: LA PAZ','Comuna 30: GOLONDRINAS','Comuna 31: LOS ANDES','Comuna 32: VILLA CARMELO',
+        'Comuna 33: MONTEBELLO','Comuna 34: NAVARRO','Comuna 35: PANCE',
+        'Comuna 36: PICHINDE','Comuna 37:EL SALADITO','Comuna 38:LA BUITRERA','ZONA 90'
+        
+        ],
+        datasets: [{
+            label: 'Inscritos en cali :'+ {{totallidercali}} ,
+        
+            backgroundColor: 'rgba(0, 191, 165, 1)',
+            borderColor: 'rgba(100,255,218,1)',
+            data: [
+            {{#each comunalider}}
+                {{this}},
+            {{/each}}
+            {{#each comunaliderzona}}
+                {{this}},
+            {{/each}}
+            
+
+            
+            
+            
+          
+          
+            
+            ]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+var ctx5 = document.getElementById('myChart5').getContext('2d');
+var chart = new Chart(ctx5, {
+  type: 'bar',
+    data: {
+        labels: [
+        'GESTORES', 'FUNCIONARIOS', 'LIDERES DE ESTRUCTURA', 'LIDERES INDEPENDIENTES'
+        
+        
+        ],
+       
+        datasets: [
+         {
+            label: 'Total : '+{{conteo_lider}} ,
+        
+           backgroundColor: 'rgba(0, 191, 165, 1)',
+            borderColor: 'rgba(0, 191, 165, 1)',
+            data: [
+           
+           
+
+        
+            
+            ]
+        },
+        {
+            label: 'Gestor : '+{{conteo_gestor}} ,
+        
+           backgroundColor: 'rgba(255,82,82,1)',
+            borderColor: 'rgba(255,82,82,1)',
+            data: [
+            {{conteo_gestor}},
+            null,
+            
+            null,
+            null
+           
+
+        
+            
+            ]
+        },
+        {
+            label: 'Funcionario : '+{{conteo_funcionario}} ,
+        
+            backgroundColor:'rgba(13,71,161,1)',
+            borderColor: 'rgba(13,71,161,1)',
+            data: [
+           
+            null,
+            {{conteo_funcionario}},
+            null,
+            null,
+
+        
+            
+            ]
+        },
+        {
+            label: 'Lider estructura: '+{{conteo_lider_estrutura}} ,
+        
+            backgroundColor: 'rgba(0, 191, 0, 1)',
+            borderColor: 'rgba(0, 191, 0, 1)',
+            data: [
+           
+            null,
+            null,
+            {{conteo_lider_estrutura}},
+          
+
+        
+            
+            ]
+        },
+        {
+            label: 'Lider independiente : '+{{conteo_independiente}} ,
+        
+            backgroundColor: 'rgba(205,220,57, 1)',
+            borderColor: 'rgba(205,220,57, 1)',
+            data: [
+           
+            null,
+            null,
+            null,
+            {{conteo_independiente}}
+
+        
+            
+            ]
+        }
+        
+        
+        
+        ]
+    },
+    
+
+    // Configuration options go here
+    options:{}
+});
+
+options= { 
+        legend: {
+            labels: {
+                fontColor: "blue",
+                fontSize: 18,
+                 backgroundColor: 'rgba(0, 191, 0, 1)',
+            }
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    fontColor: "black",
+                    fontSize: 18,
+                    stepSize: 1,
+                    beginAtZero: true
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    fontColor: "black",
+                    fontSize: 14,
+                    stepSize: 1,
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+
+var chart = new Chart(ctx3, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: data1,
+    
+
+    // Configuration options go here
+    options: {}
+});
+</script>
