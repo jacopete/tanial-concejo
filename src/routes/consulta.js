@@ -12,7 +12,7 @@ const path =require('path');
 
 const request = require('request');
 const cheerio = require('cheerio');
-require('geckodriver');
+//require('geckodriver');
 
 const {Builder, By, Key, until} = require('selenium-webdriver');
 
