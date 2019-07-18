@@ -219,11 +219,16 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
 router.post('/edictar/:cedula',logeosuper,async(req, res)=>{   
   
   //------------edictar lo que hay que acomodar
-    const {cedula, telefono, correo, comuna, zona,  puesto,mesa, cc_lider_funcionario} = req.body;
+    var {cedula, telefono, correo, comuna, zona,  puesto,mesa, cc_lider_funcionario} = req.body;
       //casos en mayusculas
     var{ nombre_completo, nombre_del_puesto,direccion}= req.body
       //casos es mayusculas
-     
+      if(comuna==''){comuna=null;};
+      if(zona==''){zona=null;};
+      if(puesto==''){puesto=null;};
+      if(mesa==''){mesa=null;};
+      if(cc_lider_funcionario==''){cc_lider_funcionario=null;};
+      if(comuna==''){comuna=null;};
       
     CEDULA=cedula;
     //example(CEDULA);
@@ -637,7 +642,12 @@ router.get('/listo',logeosuper,async(req, res)=>{
     conteo=0;
     tamaño=user.length;
   for(i=0;i<user.length;i++){
-   
+    if(user[i].comuna==''){user[i].comuna=null;};
+    if(user[i].zona==''){user[i].zona=null;};
+    if(user[i].puesto==''){user[i].puesto=null;};
+    if(user[i].mesa==''){user[i].mesa=null;};
+    if(user[i].cc_lider_funcionario==''){user[i].cc_lider_funcionario=null;};
+    
   celda++;
   conteo++;
    
