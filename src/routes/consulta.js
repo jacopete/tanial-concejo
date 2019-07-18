@@ -396,9 +396,15 @@ router.post('/edictar/:cedula',logeosuper,async(req, res)=>{
   
 //crear usuario
 router.post('/crear',logeosuper,async(req, res)=>{   
-  const {cedula, telefono, correo, comuna, zona,  puesto,mesa, cc_lider_funcionario} = req.body;
+  var {cedula, telefono, correo, comuna, zona,  puesto,mesa, cc_lider_funcionario} = req.body;
     //casos en mayusculas
   var{ nombre_completo, nombre_del_puesto,direccion}= req.body
+  if(comuna==''){comuna=null;};
+  if(zona==''){zona=null;};
+  if(puesto==''){puesto=null;};
+  if(mesa==''){mesa=null;};
+  if(cc_lider_funcionario==''){cc_lider_funcionario=null;};
+  if(comuna==''){comuna=null;};
     //casos es mayusculas
    
     
@@ -730,6 +736,8 @@ request.post('https://wsp.registraduria.gov.co/censo/consultar/', {
         if(users.direccion!=null){
           users.direccion=users.direccion.toUpperCase();
         }
+    
+        
      
         await pool.query('INSERT INTO persona set ?',[users]);
         req.flash('success2','Guardada la celda ' +celda+' con la cedula '+users.cedula+', el nombre ' + users.nombre_completo );
