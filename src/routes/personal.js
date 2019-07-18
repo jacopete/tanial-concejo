@@ -91,11 +91,20 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
    });
 
    router.post('/crear',logeosuper,async(req, res)=>{   
-    const {cedula, telefono,correo,tipo,comuna,zona, puesto, numero_votos, gestor_cedula} = req.body;
+    var {cedula, telefono,correo,tipo,comuna,zona, puesto, numero_votos, gestor_cedula} = req.body;
     
     var{ nombre_completo, nombre_del_puesto}= req.body
-    //casos es mayusculas
-  
+   
+    // toca que hacer esto porque en el servidor no sirve mandarlo en comillas
+     if(comuna==''){comuna=null;};
+     if(zona==''){zona=null;};
+     if(puesto==''){puesto=null;};    
+     if(numero_votos==''){numero_votos=null;};     
+     if(gestor_cedula==''){gestor_cedula=null;};
+                 
+      //casos es mayusculas
+      
+
     if(nombre_completo!=null){
       nombre_completo=nombre_completo.toUpperCase();
     }

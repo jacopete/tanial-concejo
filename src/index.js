@@ -15,7 +15,7 @@ const app=express();
 require('./lib/passport');
 
 //configuracion
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 3000);
 //para decirle donde esta la carpeta view
 
 app.set('views',path.join(__dirname,'view'))
