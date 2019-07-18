@@ -178,9 +178,12 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
   });
   router.post('/edictar/:cedula',logeosuper,async(req, res)=>{   
    
-    const {cedula,telefono, celular  , correo  , tipo_vinculo , tipo_contrato, salario,
+    var {cedula,telefono, celular  , correo  , tipo_vinculo , tipo_contrato, salario,
         fechai,fechat ,entidad } = req.body;
     var{ nombre_completo, direccion,cargo, dependencia}= req.body
+    
+    if(salario==''){salario=null;};
+   
       //casos es mayusculas
       if(nombre_completo!=null){
         nombre_completo=nombre_completo.toUpperCase();
@@ -248,9 +251,10 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
    });
 
    router.post('/crear',logeosuper,async(req, res)=>{   
-    const {cedula,telefono, celular  , correo  , tipo_vinculo , tipo_contrato, salario,
+    var {cedula,telefono, celular  , correo  , tipo_vinculo , tipo_contrato, salario,
     fechai,fechat ,entidad } = req.body;
     var{ nombre_completo, direccion,cargo,dependencia}= req.body
+    if(salario==''){salario=null;};
     //casos es mayusculas
     if(nombre_completo!=null){
       nombre_completo=nombre_completo.toUpperCase();

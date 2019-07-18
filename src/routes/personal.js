@@ -24,12 +24,17 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
   });
 
   router.post('/edictar/:cedula',logeosuper,async(req, res)=>{   
-    const {cedula, telefono,correo,tipo,comuna,zona, puesto, numero_votos,gestor_cedula} = req.body;
+    var {cedula, telefono,correo,tipo,comuna,zona, puesto, numero_votos,gestor_cedula} = req.body;
     var{ nombre_completo, nombre_del_puesto}= req.body
     //casos es mayusculas
     nombre_completo=nombre_completo.toUpperCase();
     nombre_del_puesto=nombre_del_puesto.toUpperCase();
-   
+   // toca que hacer esto porque en el servidor no sirve mandarlo en comillas
+   if(comuna==''){comuna=null;};
+   if(zona==''){zona=null;};
+   if(puesto==''){puesto=null;};    
+   if(numero_votos==''){numero_votos=null;};     
+   if(gestor_cedula==''){gestor_cedula=null;};
     
     const nuevousuario={
           cedula,
@@ -421,11 +426,16 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
     router.post('/edictarpersona/:cedula',logeosuper,async(req, res)=>{   
   
       //------------edictar lo que hay que acomodar
-      const {cedula, telefono, correo, comuna, zona,  puesto,mesa, cc_lider_funcionario} = req.body;
+      var {cedula, telefono, correo, comuna, zona,  puesto,mesa, cc_lider_funcionario} = req.body;
           //casos en mayusculas
         var{ nombre_completo, nombre_del_puesto,direccion}= req.body
           //casos es mayusculas
-                  
+              // toca que hacer esto porque en el servidor no sirve mandarlo en comillas
+     if(comuna==''){comuna=null;};
+     if(zona==''){zona=null;};
+     if(puesto==''){puesto=null;};    
+     if(mesa==''){mesa=null;};     
+     if(cc_lider_funcionario==''){cc_lider_funcionario=null;};    
         CEDULA=cedula;
         //example(CEDULA);
        
@@ -617,13 +627,18 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
       
     });
     router.post('/edictarpersonagestor/:cedula',logeosuper,async(req, res)=>{   
-      const {cedula, telefono, correo, comuna, zona, puesto, mesa, cc_lider_funcionario} = req.body;
+      var {cedula, telefono, correo, comuna, zona, puesto, mesa, cc_lider_funcionario} = req.body;
         var{ nombre_completo, nombre_del_puesto,direccion}= req.body
         //casos es mayusculas
         nombre_completo=nombre_completo.toUpperCase();
         nombre_del_puesto=nombre_del_puesto.toUpperCase();
         direccion=direccion.toUpperCase();
-        
+        if(comuna==''){comuna=null;};
+        if(zona==''){zona=null;};
+        if(puesto==''){puesto=null;};    
+        if(mesa==''){mesa=null;};     
+        if(cc_lider_funcionario==''){cc_lider_funcionario=null;};
+
         const nuevousuario={
               cedula,
               nombre_completo ,
@@ -984,12 +999,18 @@ const textomostrar=true;
           
         });
         router.post('/edictargestores/:cedula',logeosuper,async(req, res)=>{   
-          const {cedula, telefono,correo,tipo,comuna,zona, puesto, numero_votos} = req.body;
+          var {cedula, telefono,correo,tipo,comuna,zona, puesto, numero_votos} = req.body;
           var{ nombre_completo, nombre_del_puesto}= req.body
           //casos es mayusculas
           nombre_completo=nombre_completo.toUpperCase();
           nombre_del_puesto=nombre_del_puesto.toUpperCase();
           
+          if(comuna==''){comuna=null;};
+          if(zona==''){zona=null;};
+          if(puesto==''){puesto=null;};    
+          if(numero_votos==''){numero_votos=null;};     
+         
+
           if(req.url.indexOf('?')>0)
           {
             cedulagestor = req.url.split('?')[1];
@@ -1056,12 +1077,18 @@ const textomostrar=true;
         
       });
       router.post('/edictargestores1/:cedula',logeosuper,async(req, res)=>{   
-        const {cedula, telefono,correo,tipo,comuna,zona, puesto, numero_votos,gestor_cedula} = req.body;
+        var {cedula, telefono,correo,tipo,comuna,zona, puesto, numero_votos,gestor_cedula} = req.body;
         var{ nombre_completo, nombre_del_puesto}= req.body
         //casos es mayusculas
         nombre_completo=nombre_completo.toUpperCase();
         nombre_del_puesto=nombre_del_puesto.toUpperCase();
-        
+
+        if(comuna==''){comuna=null;};
+        if(zona==''){zona=null;};
+        if(puesto==''){puesto=null;};    
+        if(numero_votos==''){numero_votos=null;};     
+        if(gestor_cedula==''){gestor_cedula=null;};
+
         if(req.url.indexOf('?')>0)
         {
           cedulagestor = req.url.split('?')[1];
