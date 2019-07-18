@@ -183,6 +183,8 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
     var{ nombre_completo, direccion,cargo, dependencia}= req.body
     
     if(salario==''){salario=null;};
+    if(fechai==''){fechai=null;};
+    if(fechat==''){fechat=null;};
    
       //casos es mayusculas
       if(nombre_completo!=null){
@@ -255,6 +257,8 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
     fechai,fechat ,entidad } = req.body;
     var{ nombre_completo, direccion,cargo,dependencia}= req.body
     if(salario==''){salario=null;};
+    if(fechai==''){fechai=null;};
+    if(fechat==''){fechat=null;};
     //casos es mayusculas
     if(nombre_completo!=null){
       nombre_completo=nombre_completo.toUpperCase();
