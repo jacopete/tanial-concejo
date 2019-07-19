@@ -518,18 +518,22 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
                 
           }else{
          //fuera del for
-      
+         if(comuna==''){comuna=null;};
+         if(zona==''){zona=null;};
+         if(puesto==''){puesto=null;};    
+         if(mesa==''){mesa=null;};     
+         if(cc_lider_funcionario==''){cc_lider_funcionario=null;}; 
          const nuevousuario={
           cedula,
           nombre_completo,
-          direccion:0,   
-          telefono:0,
-          correo:0,
-          comuna:0,
-          zona:0,
-          nombre_del_puesto:0,
-          puesto:0,
-          mesa:0,
+          direccion,   
+          telefono,
+          correo,
+          comuna,
+          zona,
+          nombre_del_puesto,
+          puesto,
+          mesa,
           cc_lider_funcionario
           }
           if(nuevousuario.cedula==''){
