@@ -642,9 +642,9 @@ router.get('/listo',logeosuper,async(req, res)=>{
     conteo=0;
     tamaño=user.length;
   for(i=0;i<user.length;i++){
-    if(user[i].comuna==''){user[i].comuna=null;};
-    if(user[i].zona==''){user[i].zona=null;};
-    if(user[i].puesto==''){user[i].puesto=null;};
+    if(user[i].comuna==''){user[i].comuna=0;};
+    if(user[i].zona==''){user[i].zona=0;};
+    if(user[i].puesto==''){user[i].puesto=0;};
     if(user[i].mesa==''){user[i].mesa=null;};
     if(user[i].cc_lider_funcionario==''){user[i].cc_lider_funcionario=null;};
     
