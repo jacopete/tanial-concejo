@@ -720,11 +720,18 @@ request.post('https://wsp.registraduria.gov.co/censo/consultar/', {
          users.nombre_del_puesto=regis_lugar;
          
         }
+        if(users.comuna==''){users.comuna=null;};
+        if(users.zona==''){users.zona=null;};
+        if(users.puesto==''){users.puesto=null;};
+        if(users.mesa==''){users.mesa=null;};
+        if(users.cc_lider_funcionario==''){users.cc_lider_funcionario=null;};
+        if(regis_mesa!=''){
         if(users.mesa==null){
          
           users.mesa=regis_mesa;
           
          }
+        }
          if(users.direccion==null){
          
           users.direccion=regis_direccion;
