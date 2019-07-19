@@ -415,6 +415,33 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
     res.redirect('/personal/');
   });
 
+  router.post('/nombre',logeosuper,async(req, res)=>{ 
+    const {nombre} = req.body;
+    
+       if(nombre==''){
+          req.flash('success','Digite un nombre');
+          res.redirect('/personal/');
+          //ensayo
+          
+       }else{
+           let query='SELECT * FROM gestores WHERE nombre_completo LIKE '+'"'+'%'+nombre+'%'+'"';
+           const usuario = await pool.query(query);
+            if(usuario==''){
+              req.flash('success','No se encontraron coincidencias');
+              res.redirect('/personal/');
+            }else{
+              res.render('personal/nombre',{usuario});
+            //res.render('consulta/',{usuario});
+            }
+    
+        }  
+       
+  });
+  
+  router.get('/nombre',logeosuper,async(req, res)=>{ 
+    res.redirect('/personal/');
+  });
+
     router.get('/edictarpersona/:cedula',logeosuper,async(req, res)=>{   
       const {cedula} = req.params;
       glovalcedula =req.params.cedula;

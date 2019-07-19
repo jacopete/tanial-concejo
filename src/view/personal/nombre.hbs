@@ -7,7 +7,6 @@
 <div class="container-fluid ">
 
  {{> consultapersonas}}
-  
 
 <form action="/personal" method="POST">
   <table class="table">
@@ -226,7 +225,6 @@
           </select>
        </th>
        <th  class="text-center">Nombre del puesto</th>
-       <!--<th  class="text-center">CC responsable</th>-->
         <th scope="col">Nº votos</th>
         <th scope="col">Reporte</th>
         <th scope="col"></th>
@@ -255,8 +253,6 @@
         <td>{{this.zona}}</td>
         <td>{{this.puesto}}</td>
         <td>{{this.nombre_del_puesto}}</td>
-        <!--<td>{{this.gestor_cedula}}</td>-->
-        
         <td>{{this.numero_votos}}</td>
         <td>{{this.reporte}}</td>
         {{#ifgestor this.tipo}}
@@ -287,5 +283,4 @@
    {{/if}}
 </div>
     </form>
-<td><a href="/personal/descarga"  class="btn btn-danger glyphicon glyphicon-download text-center">  Descargar </a></td>
     </div>
