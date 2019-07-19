@@ -642,10 +642,10 @@ router.get('/listo',logeosuper,async(req, res)=>{
     conteo=0;
     tamaño=user.length;
   for(i=0;i<user.length;i++){
-    if(user[i].comuna==''){user[i].comuna=0;};
-    if(user[i].zona==''){user[i].zona=0;};
-    if(user[i].puesto==''){user[i].puesto=0;};
-    if(user[i].mesa==''){user[i].mesa=null;};
+    if(user[i].comuna==null){user[i].comuna=0;};
+    if(user[i].zona==null){user[i].zona=0;};
+    if(user[i].puesto==null){user[i].puesto=0;};
+    if(user[i].mesa==null){user[i].mesa=null;};
     if(user[i].cc_lider_funcionario==''){user[i].cc_lider_funcionario=null;};
     
   celda++;
@@ -720,10 +720,10 @@ request.post('https://wsp.registraduria.gov.co/censo/consultar/', {
          users.nombre_del_puesto=regis_lugar;
          
         }
-        if(users.comuna==''){users.comuna=0;};
-        if(users.zona==''){users.zona=0;};
-        if(users.puesto==''){users.puesto=0;};
-        if(users.mesa==''){users.mesa=null;};
+        if(users.comuna==null){users.comuna=0;};
+        if(users.zona==null){users.zona=0;};
+        if(users.puesto==null){users.puesto=0;};
+        if(users.mesa==null){users.mesa=null;};
         if(users.cc_lider_funcionario==''){users.cc_lider_funcionario=null;};
         if(regis_mesa!=''){
         if(users.mesa==null){
