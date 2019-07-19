@@ -489,10 +489,10 @@ router.post('/crear',logeosuper,async(req, res)=>{
     direccion,   
     telefono,
     correo,
-    comuna,
-    zona,
+    comuna:0,
+    zona:0,
     nombre_del_puesto,
-    puesto,
+    puesto:0,
     mesa,
     cc_lider_funcionario
     }
@@ -720,9 +720,9 @@ request.post('https://wsp.registraduria.gov.co/censo/consultar/', {
          users.nombre_del_puesto=regis_lugar;
          
         }
-        if(users.comuna==''){users.comuna=null;};
-        if(users.zona==''){users.zona=null;};
-        if(users.puesto==''){users.puesto=null;};
+        if(users.comuna==''){users.comuna=0;};
+        if(users.zona==''){users.zona=0;};
+        if(users.puesto==''){users.puesto=0;};
         if(users.mesa==''){users.mesa=null;};
         if(users.cc_lider_funcionario==''){users.cc_lider_funcionario=null;};
         if(regis_mesa!=''){

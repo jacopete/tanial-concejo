@@ -431,9 +431,9 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
         var{ nombre_completo, nombre_del_puesto,direccion}= req.body
           //casos es mayusculas
               // toca que hacer esto porque en el servidor no sirve mandarlo en comillas
-     if(comuna==''){comuna=null;};
-     if(zona==''){zona=null;};
-     if(puesto==''){puesto=null;};    
+     if(comuna==''){comuna=0;};
+     if(zona==''){zona=0;};
+     if(puesto==''){puesto=0;};    
      if(mesa==''){mesa=null;};     
      if(cc_lider_funcionario==''){cc_lider_funcionario=null;};    
         CEDULA=cedula;
@@ -518,9 +518,9 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
                 
           }else{
          //fuera del for
-         if(comuna==''){comuna=null;};
-         if(zona==''){zona=null;};
-         if(puesto==''){puesto=null;};    
+         if(comuna==''){comuna=0;};
+         if(zona==''){zona=0;};
+         if(puesto==''){puesto=0;};    
          if(mesa==''){mesa=null;};     
          if(cc_lider_funcionario==''){cc_lider_funcionario=null;}; 
          const nuevousuario={
@@ -637,9 +637,9 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
         nombre_completo=nombre_completo.toUpperCase();
         nombre_del_puesto=nombre_del_puesto.toUpperCase();
         direccion=direccion.toUpperCase();
-        if(comuna==''){comuna=null;};
-        if(zona==''){zona=null;};
-        if(puesto==''){puesto=null;};    
+        if(comuna==''){comuna=0;};
+        if(zona==''){zona=0;};
+        if(puesto==''){puesto=0;};    
         if(mesa==''){mesa=null;};     
         if(cc_lider_funcionario==''){cc_lider_funcionario=null;};
 
