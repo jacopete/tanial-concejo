@@ -241,7 +241,8 @@ router.post('/',logeocualquiera,async(req, res)=>{
     //dibujar lider gestor o funcionario
    if(cedula!=null){
        //el lider como tal
-       const usuariolider = await pool.query('SELECT * FROM gestores  WHERE cedula='+cedula);
+       usuariolider = await pool.query('SELECT * FROM gestores  WHERE cedula='+cedula);
+      
     reportecomuna=usuariolider[0].comuna;
 
     //listado del lider
@@ -261,9 +262,10 @@ router.post('/',logeocualquiera,async(req, res)=>{
     //diferencias
     totalfueralider=totallider-totallidercali;
    }else{
-    usuariolider=null;
+    //usuariolider=null;
     usuariolider90=null;
    }
+   
 
      //para dibujar la fuerza de la comuna consiguiendo votantes
      total=0;

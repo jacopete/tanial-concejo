@@ -1,10 +1,10 @@
 
- 
+
 
 
 <div class="container-fluid ">
 
- {{> consultapersonasvista}}
+  {{> consultapersonasvista}}
 
 <form action="/personalvista" method="POST">
   <table class="table">
@@ -52,7 +52,7 @@
             <option {{selected comuna "19"}}>19</option>
             <option {{selected comuna "20"}}>20</option>
             <option {{selected comuna "21"}}>21</option>
-            <option {{selected comuna "22"}}>22</option>       
+            <option {{selected comuna "22"}}>22</option>
             <option {{selected comuna "23"}}>23</option>
             <option {{selected comuna "24"}}>24</option>
             <option {{selected comuna "25"}}>25</option>
@@ -260,7 +260,9 @@
             
          {{/ifgestor }}
              <td><a href="/personalvista/lista/{{this.cedula}}"  class="btn btn-info glyphicon glyphicon glyphicon-eye-open"></a></td>
-           
+            
+      
+      
       </tr>
     
      
@@ -278,5 +280,4 @@
    {{/if}}
 </div>
     </form>
-<td><a href="/personalvista/descarga"  class="btn btn-danger glyphicon glyphicon-download text-center">  Descargar </a></td>
     </div>

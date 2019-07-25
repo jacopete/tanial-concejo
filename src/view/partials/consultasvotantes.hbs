@@ -1,8 +1,20 @@
 <!--cedula-->
-<div class="d-flex justify-content-around">
-<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#cedula">Cedula</button>
-<div scope="col"><h4>Numero de inscritos : {{numero}}</h4></div>
+<div class="container">
+<div class="col px-md-2"><h1>  Inscritos </h1></div>
+<div class="d-flex flex-row bd-highlight mb-3">
+ <div class="d-flex justify-content-between">
+     <div class="col px-md-2"> <a  type="button" href="/consulta/crear"  class="btn btn-primary col-md-1.5 align-self-center ">Nuevo registro</a></div>
+     <div class="col px-md-2"><button type="button" class="btn btn-info align-self-center" data-toggle="collapse" data-target="#cedula">Cedula</button></div>
+     
+
+
 </div>
+
+<div class="ml-auto p-2 bd-highlight"><h4>Numero de personal : {{numero}}</h4></div>
+
+</div>
+</div>
+
  
 
 <div class="d-flex justify-content-center">
@@ -26,18 +38,27 @@
 </div>
 
 </div>
+<div id="nombre" class="collapse ">
 
-<!--crear-->
+            <div class="card">
+                <div class="card-body">
+                    <form action="/consulta/nombre" method="POST">
+                        <div class="form-group">
+                        <input class="col-md-12" type="text" name="nombre" placeholder="Nombre">
+                        </div>
+                        <div class="form-group">
+                        <button class="btn btn-success btn-block" >Consultar</button>
+                         
+                        </div>
 
-
-
-
-
-<!--comuna-->
-
-
+                    </form>
+                </div>
+          
+</div>
 
 </div>
 
-<a href="/consulta/crear"  class="btn btn-primary col-md-1 ">Nuevo registro</a>
+</div>
+
+
 

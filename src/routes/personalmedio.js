@@ -231,6 +231,33 @@ router.get('/',logeousuariomedio,async(req, res)=>{
     res.redirect('/personalmedio/');
   });
 
+  router.post('/nombre',logeousuariomedio,async(req, res)=>{ 
+    const {nombre} = req.body;
+    
+       if(nombre==''){
+          req.flash('success','Digite un nombre');
+          res.redirect('/personalmedio/');
+          //ensayo
+          
+       }else{
+           let query='SELECT * FROM gestores WHERE nombre_completo LIKE '+'"'+'%'+nombre+'%'+'"';
+           const usuario = await pool.query(query);
+            if(usuario==''){
+              req.flash('success','No se encontraron coincidencias');
+              res.redirect('/personalmedio/');
+            }else{
+              res.render('personalmedio/nombre',{usuario});
+            //res.render('consulta/',{usuario});
+            }
+    
+        }  
+       
+  });
+  
+  router.get('/nombre',logeousuariomedio,async(req, res)=>{ 
+    res.redirect('/personalmedio/');
+  });
+
 
   router.get('/lista/:cedula',logeousuariomedio,async(req, res)=>{  
     const {cedula} = req.params;

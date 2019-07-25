@@ -30,7 +30,7 @@ router.get('/',logeousuariomedio,async(req, res)=>{
   const entidad = parseInt(req.body.entidad);
   const dependencia = parseInt(req.body.dependencia);
   const reconocimiento = parseInt(req.body.reconocimiento);
-  console.log("tipo_vinculo :"+tipo_vinculo +"tipo_contrato :"+tipo_contrato +"entidad :"+entidad+"dependencia :"+dependencia+"reconocimiento :"+reconocimiento)
+  
    var navegacion={
     page: parseInt(page),
     pages,   
@@ -58,7 +58,7 @@ router.post('/',logeousuariomedio, async(req, res)=>{
   const entidad =req.body.entidad;
   const dependencia =req.body.dependencia;
   const reconocimiento = req.body.reconocimiento;
-  console.log("tipo_vinculo :"+ tipo_vinculo +" tipo_contrato :"+tipo_contrato +" entidad :"+entidad+" dependencia :"+dependencia+" reconocimiento :"+reconocimiento)
+  
   
   let firstQexecc = false;
   let queryy = 'SELECT count(*) as numero FROM contratos';
@@ -67,7 +67,7 @@ router.post('/',logeousuariomedio, async(req, res)=>{
     descargausuario=null;
     queryy += ' WHERE'
     if(tipo_vinculo){
-      console.log("entro a vinculo")
+     
       queryy += ' tipo_vinculo = ' + '"'+tipo_vinculo+'"';
       
       firstQexecc = true;
@@ -122,7 +122,7 @@ router.post('/',logeousuariomedio, async(req, res)=>{
     descargausuario=null;
     query += ' WHERE'
     if(tipo_vinculo){
-      console.log("entro a vinculo")
+     
       query += ' tipo_vinculo = ' + '"'+tipo_vinculo+'"';
       
       firstQexec = true;
@@ -154,7 +154,7 @@ router.post('/',logeousuariomedio, async(req, res)=>{
    
   }
   querydescarga=query;
-  console.log( query);
+  
   query += ' LIMIT '+ items +' OFFSET '+ limite;
  
    const usuario = await pool.query(query);
@@ -182,7 +182,7 @@ router.post('/',logeousuariomedio, async(req, res)=>{
               req.flash('success','No se encontraron coincidencias');
               res.redirect('/contratosmedio/');
             }else{
-              //console.log('success','La cedula existe');
+             
             res.render('contratosmedio/cedula',{usuario });
             //res.render('consulta/',{usuario});
             }
@@ -197,7 +197,32 @@ router.post('/',logeousuariomedio, async(req, res)=>{
   });
   
  
-
+  router.post('/nombre',logeousuariomedio,async(req, res)=>{ 
+    const {nombre} = req.body;
+    
+       if(nombre==''){
+          req.flash('success','Digite un nombre');
+          res.redirect('/contratosmedio/');
+          //ensayo
+          
+       }else{
+           let query='SELECT * FROM contratos WHERE nombre_completo LIKE '+'"'+'%'+nombre+'%'+'"';
+           const usuario = await pool.query(query);
+            if(usuario==''){
+              req.flash('success','No se encontraron coincidencias');
+              res.redirect('/contratosmedio/');
+            }else{
+              res.render('contratosmedio/nombre',{usuario});
+            //res.render('consulta/',{usuario});
+            }
+    
+        }  
+       
+  });
+  
+  router.get('/nombre',logeousuariomedio,async(req, res)=>{ 
+    res.redirect('/contratosmedio/');
+  });
 
   router.get('/descarga', logeousuariomedio,function(req, res) { 
    
@@ -213,7 +238,7 @@ router.post('/',logeousuariomedio, async(req, res)=>{
     
     
     XLSX.writeFile(wb, "resultadovotantes.xlsx");
-    console.log(wb);
+    
     res.download('resultadovotantes.xlsx');}
     else{
      
@@ -227,7 +252,7 @@ router.post('/',logeousuariomedio, async(req, res)=>{
       
       
       XLSX.writeFile(wb, "resultadovotantes.xlsx");
-      console.log(wb);
+     
       res.download('resultadovotantes.xlsx');
 
     }
