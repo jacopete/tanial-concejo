@@ -229,7 +229,7 @@ router.post('/edictar/:cedula',logeosuper,async(req, res)=>{
       if(mesa==''){mesa=null;};
       if(cc_lider_funcionario==''){cc_lider_funcionario=null;};
       if(comuna==''){comuna=null;};
-      
+      if(direccion==''){direccion=null;};
     CEDULA=cedula;
     //example(CEDULA);
    
@@ -271,7 +271,7 @@ router.post('/edictar/:cedula',logeosuper,async(req, res)=>{
               const nuevousuario={
               cedula,
               nombre_completo ,
-              direccion:regis_direccion,   
+              direccion, 
               telefono,
               correo,
               comuna:divipol[i].comuna,
@@ -356,7 +356,7 @@ router.post('/edictar/:cedula',logeosuper,async(req, res)=>{
     const nuevousuario={
       cedula,
       nombre_completo ,
-      direccion:regis_direccion,   
+      direccion,   
       telefono,
       correo,
       comuna,
@@ -410,6 +410,7 @@ router.post('/crear',logeosuper,async(req, res)=>{
   if(mesa==''){mesa=null;};
   if(cc_lider_funcionario==''){cc_lider_funcionario=null;};
   if(comuna==''){comuna=null;};
+  if(direccion==''){direccion=null;};
     //casos es mayusculas
    
     
@@ -452,7 +453,7 @@ router.post('/crear',logeosuper,async(req, res)=>{
             const nuevousuario={
             cedula,
             nombre_completo ,
-            direccion:regis_direccion,   
+            direccion,  
             telefono,
             correo,
             comuna:divipol[i].comuna,
@@ -520,7 +521,7 @@ if(regis_lugarbool==false){
   const nuevousuario={
     cedula,
     nombre_completo ,
-    direccion:regis_direccion,   
+    direccion, 
     telefono,
     correo,
     comuna,

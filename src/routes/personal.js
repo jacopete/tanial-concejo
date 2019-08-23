@@ -461,7 +461,9 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
      if(comuna==''){comuna=0;};
      if(zona==''){zona=0;};
      if(puesto==''){puesto=0;};    
-     if(mesa==''){mesa=null;};     
+     if(mesa==''){mesa=null;};  
+     if(direccion==''){direccion=null;};
+     
      if(cc_lider_funcionario==''){cc_lider_funcionario=null;};    
         CEDULA=cedula;
         //example(CEDULA);
@@ -501,7 +503,7 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
                   const nuevousuario={
                   cedula,
                   nombre_completo ,
-                  direccion:regis_direccion,   
+                  direccion,   
                   telefono,
                   correo,
                   comuna:divipol[i].comuna,
@@ -549,6 +551,7 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
          if(zona==''){zona=0;};
          if(puesto==''){puesto=0;};    
          if(mesa==''){mesa=null;};     
+         if(direccion==''){direccion=null;};
          if(cc_lider_funcionario==''){cc_lider_funcionario=null;}; 
          const nuevousuario={
           cedula,
@@ -598,7 +601,7 @@ router.get('/edictar/:cedula',logeosuper,async(req, res)=>{
         const nuevousuario={
           cedula,
           nombre_completo ,
-          direccion:regis_direccion,   
+          direccion,  
           telefono,
           correo,
           comuna,
