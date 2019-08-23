@@ -733,11 +733,12 @@ request.post('https://wsp.registraduria.gov.co/censo/consultar/', {
           
          }
         }
+        /*
          if(users.direccion==null){
          
           users.direccion=regis_direccion;
           
-         }
+         }*/
         
        
         //cambio a mayusculas
