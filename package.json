@@ -34,7 +34,7 @@
     "response": "^0.18.0",
     "selenium-webdriver": "^4.0.0-alpha.1",
     "timeago.js": "^4.0.0-beta.2",
-    "xlsx": "^0.14.3",
+    "xlsx": "^0.17.0",
     "yquery": "^2.0.0"
   },
   "devDependencies": {
